@@ -1,5 +1,5 @@
 //
-//  BidVolumnView.swift
+//  BidVolumeView.swift
 //  OrderPaperSample
 //
 //  Created by jiwon Yoon on 2023/03/29.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class BidVolumnView: UIView {
+final class BidVolumeView: UIView {
     private lazy var collectionView: UICollectionView = {
         let layout = createLayout()
         
@@ -18,14 +18,14 @@ final class BidVolumnView: UIView {
         )
         
         collectionView.register(
-            BidVolumnCell.self,
-            forCellWithReuseIdentifier: BidVolumnCell.identifier
+            BidVolumeCell.self,
+            forCellWithReuseIdentifier: BidVolumeCell.identifier
         )
         
         return collectionView
     }()
     
-    private var dataSource: UICollectionViewDiffableDataSource<Int, VolumnData>!
+    private var dataSource: UICollectionViewDiffableDataSource<Int, VolumeData>!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,7 +38,7 @@ final class BidVolumnView: UIView {
     }
 }
 
-private extension BidVolumnView {
+private extension BidVolumeView {
     func setupViews() {
         addSubview(collectionView)
         
@@ -61,7 +61,7 @@ private extension BidVolumnView {
     
     func configurationDataSource() {
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BidVolumnCell.identifier, for: indexPath) as? BidVolumnCell else { return UICollectionViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BidVolumeCell.identifier, for: indexPath) as? BidVolumeCell else { return UICollectionViewCell() }
             cell.setupCell()
             
             return cell
@@ -71,9 +71,9 @@ private extension BidVolumnView {
     }
     
     func applySnapshot() {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, VolumnData>()
+        var snapshot = NSDiffableDataSourceSnapshot<Int, VolumeData>()
         snapshot.appendSections([0])
-        snapshot.appendItems(VolumnData.allItem)
+        snapshot.appendItems(VolumeData.allItem)
         dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
@@ -83,12 +83,12 @@ private extension BidVolumnView {
 
 import SwiftUI
 
-struct BidVolumnViewPreview: PreviewProvider {
+struct BidVolumeViewPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
-            BidVolumnView()
+            BidVolumeView()
         }
-        .frame(width: Constants.OrderPaper.volumnViewWidth, height: 300.0)
+        .frame(width: Constants.OrderPaper.volumeViewWidth, height: 300.0)
     }
 }
 

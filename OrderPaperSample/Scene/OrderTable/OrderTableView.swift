@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class OrderTableView: UIView {
-    private lazy var bidVolumnView = BidVolumnView()
+    private lazy var bidVolumeView = BidVolumeView()
     
     private lazy var askPriceView: UIView = {
         let view = UIView()
@@ -30,7 +30,7 @@ final class OrderTableView: UIView {
         stackView.distribution = .fillProportionally
         
         [
-            bidVolumnView,
+            bidVolumeView,
             askPriceView,
             rightInfoView
         ]
@@ -51,7 +51,7 @@ final class OrderTableView: UIView {
         
         
         [
-            bidVolumnView,
+            bidVolumeView,
             askPriceView,
             rightInfoView
         ]
@@ -59,22 +59,22 @@ final class OrderTableView: UIView {
                 view.addSubview($0)
             }
         
-        bidVolumnView.snp.makeConstraints {
+        bidVolumeView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.equalToSuperview()
-            $0.width.equalTo(Constants.OrderPaper.volumnViewWidth)
+            $0.width.equalTo(Constants.OrderPaper.volumeViewWidth)
         }
         
         askPriceView.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.equalTo(bidVolumnView.snp.trailing)
+            $0.leading.equalTo(bidVolumeView.snp.trailing)
             $0.width.equalTo(Constants.OrderPaper.priceViewWidth)
         }
         
         rightInfoView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.trailing.equalToSuperview()
-            $0.width.equalTo(Constants.OrderPaper.volumnViewWidth)
+            $0.width.equalTo(Constants.OrderPaper.volumeViewWidth)
         }
         
         

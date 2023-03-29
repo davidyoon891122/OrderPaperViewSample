@@ -1,5 +1,5 @@
 //
-//  BidVolumnCell.swift
+//  BidVolumeCell.swift
 //  OrderPaperSample
 //
 //  Created by jiwon Yoon on 2023/03/29.
@@ -8,10 +8,10 @@
 import UIKit
 import SnapKit
 
-final class BidVolumnCell: UICollectionViewCell {
-    static let identifier = "BidVolumnCell"
+final class BidVolumeCell: UICollectionViewCell {
+    static let identifier = "BidVolumeCell"
     
-    private lazy var volumnLabel: UILabel = {
+    private lazy var volumeLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14.0, weight: .bold)
         label.textColor = .label
@@ -26,14 +26,14 @@ final class BidVolumnCell: UICollectionViewCell {
         let view = UIView()
         view.backgroundColor = .systemBlue.withAlphaComponent(0.3)
         [
-            volumnLabel
+            volumeLabel
         ]
             .forEach {
                 view.addSubview($0)
             }
         
         let offset: CGFloat = 8.0
-        volumnLabel.snp.makeConstraints {
+        volumeLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.equalToSuperview().offset(offset)
             $0.trailing.equalToSuperview().offset(-offset)
@@ -57,7 +57,7 @@ final class BidVolumnCell: UICollectionViewCell {
     }
 }
 
-private extension BidVolumnCell {
+private extension BidVolumeCell {
     func setupViews() {
         [
             containerView
@@ -77,12 +77,12 @@ private extension BidVolumnCell {
 
 import SwiftUI
 
-struct BidVolumnCellPreview: PreviewProvider {
+struct BidVolumeCellPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
-            BidVolumnCell()
+            BidVolumeCell()
         }
-        .frame(width: Constants.OrderPaper.volumnViewWidth, height: 30.0)
+        .frame(width: Constants.OrderPaper.volumeViewWidth, height: 30.0)
     }
 }
 
