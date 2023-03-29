@@ -14,6 +14,15 @@
 		49ED906029D39AB30003E962 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED905F29D39AB30003E962 /* MainViewController.swift */; };
 		49ED906229D39D530003E962 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED906129D39D530003E962 /* Extension+UIViewController.swift */; };
 		49ED906429D39E1A0003E962 /* DevideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED906329D39E1A0003E962 /* DevideType.swift */; };
+		49ED906B29D3B1CF0003E962 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 49ED906A29D3B1CF0003E962 /* SnapKit */; };
+		49ED906D29D3E1E60003E962 /* OrderPaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED906C29D3E1E60003E962 /* OrderPaperView.swift */; };
+		49ED906F29D3E2CD0003E962 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED906E29D3E2CD0003E962 /* Extension+UIView.swift */; };
+		49ED907129D3F53A0003E962 /* TopInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED907029D3F53A0003E962 /* TopInfoView.swift */; };
+		49ED907329D3FF2F0003E962 /* OrderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED907229D3FF2F0003E962 /* OrderTableView.swift */; };
+		49ED907529D4049C0003E962 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED907429D4049C0003E962 /* Constants.swift */; };
+		49ED907729D414680003E962 /* BidVolumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED907629D414680003E962 /* BidVolumnView.swift */; };
+		49ED907929D41CB20003E962 /* BidVolumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED907829D41CB20003E962 /* BidVolumnCell.swift */; };
+		49ED907B29D4235F0003E962 /* VolumnData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED907A29D4235F0003E962 /* VolumnData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,14 @@
 		49ED905F29D39AB30003E962 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		49ED906129D39D530003E962 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		49ED906329D39E1A0003E962 /* DevideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevideType.swift; sourceTree = "<group>"; };
+		49ED906C29D3E1E60003E962 /* OrderPaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPaperView.swift; sourceTree = "<group>"; };
+		49ED906E29D3E2CD0003E962 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		49ED907029D3F53A0003E962 /* TopInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInfoView.swift; sourceTree = "<group>"; };
+		49ED907229D3FF2F0003E962 /* OrderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableView.swift; sourceTree = "<group>"; };
+		49ED907429D4049C0003E962 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		49ED907629D414680003E962 /* BidVolumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidVolumnView.swift; sourceTree = "<group>"; };
+		49ED907829D41CB20003E962 /* BidVolumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidVolumnCell.swift; sourceTree = "<group>"; };
+		49ED907A29D4235F0003E962 /* VolumnData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumnData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49ED906B29D3B1CF0003E962 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +76,56 @@
 		49ED904A29D39A460003E962 /* OrderPaperSample */ = {
 			isa = PBXGroup;
 			children = (
+				49ED906529D3AB1D0003E962 /* Delegate */,
+				49ED906629D3ABA90003E962 /* Resource */,
+				49ED906729D3ABCC0003E962 /* Scene */,
+				49ED906829D3ABD20003E962 /* Library */,
+				49ED907429D4049C0003E962 /* Constants.swift */,
+			);
+			path = OrderPaperSample;
+			sourceTree = "<group>";
+		};
+		49ED906529D3AB1D0003E962 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
 				49ED904B29D39A460003E962 /* AppDelegate.swift */,
 				49ED904D29D39A460003E962 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		49ED906629D3ABA90003E962 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
 				49ED905429D39A480003E962 /* Assets.xcassets */,
 				49ED905629D39A480003E962 /* LaunchScreen.storyboard */,
 				49ED905929D39A480003E962 /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		49ED906729D3ABCC0003E962 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
 				49ED905F29D39AB30003E962 /* MainViewController.swift */,
+				49ED906C29D3E1E60003E962 /* OrderPaperView.swift */,
+				49ED907029D3F53A0003E962 /* TopInfoView.swift */,
+				49ED907229D3FF2F0003E962 /* OrderTableView.swift */,
+				49ED907629D414680003E962 /* BidVolumnView.swift */,
+				49ED907829D41CB20003E962 /* BidVolumnCell.swift */,
+				49ED907A29D4235F0003E962 /* VolumnData.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		49ED906829D3ABD20003E962 /* Library */ = {
+			isa = PBXGroup;
+			children = (
 				49ED906129D39D530003E962 /* Extension+UIViewController.swift */,
 				49ED906329D39E1A0003E962 /* DevideType.swift */,
+				49ED906E29D3E2CD0003E962 /* Extension+UIView.swift */,
 			);
-			path = OrderPaperSample;
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +144,9 @@
 			dependencies = (
 			);
 			name = OrderPaperSample;
+			packageProductDependencies = (
+				49ED906A29D3B1CF0003E962 /* SnapKit */,
+			);
 			productName = OrderPaperSample;
 			productReference = 49ED904829D39A460003E962 /* OrderPaperSample.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +175,9 @@
 				Base,
 			);
 			mainGroup = 49ED903F29D39A460003E962;
+			packageReferences = (
+				49ED906929D3B1CF0003E962 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 49ED904929D39A460003E962 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,11 +204,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49ED906F29D3E2CD0003E962 /* Extension+UIView.swift in Sources */,
+				49ED906D29D3E1E60003E962 /* OrderPaperView.swift in Sources */,
+				49ED907929D41CB20003E962 /* BidVolumnCell.swift in Sources */,
 				49ED906229D39D530003E962 /* Extension+UIViewController.swift in Sources */,
 				49ED906029D39AB30003E962 /* MainViewController.swift in Sources */,
 				49ED904C29D39A460003E962 /* AppDelegate.swift in Sources */,
+				49ED907529D4049C0003E962 /* Constants.swift in Sources */,
+				49ED907729D414680003E962 /* BidVolumnView.swift in Sources */,
 				49ED906429D39E1A0003E962 /* DevideType.swift in Sources */,
+				49ED907129D3F53A0003E962 /* TopInfoView.swift in Sources */,
+				49ED907B29D4235F0003E962 /* VolumnData.swift in Sources */,
 				49ED904E29D39A460003E962 /* SceneDelegate.swift in Sources */,
+				49ED907329D3FF2F0003E962 /* OrderTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +357,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HDFLLXK789;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OrderPaperSample/Info.plist;
+				INFOPLIST_FILE = OrderPaperSample/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -313,7 +385,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HDFLLXK789;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OrderPaperSample/Info.plist;
+				INFOPLIST_FILE = OrderPaperSample/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -354,6 +426,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		49ED906929D3B1CF0003E962 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		49ED906A29D3B1CF0003E962 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49ED906929D3B1CF0003E962 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 49ED904029D39A460003E962 /* Project object */;
 }
