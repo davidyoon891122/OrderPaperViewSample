@@ -23,3 +23,18 @@ class VolumnData: Hashable {
         lhs.id == rhs.id
     }
 }
+
+extension VolumnData {
+    static let allItem = [
+        VolumnData(volumn: 3210),
+        VolumnData(volumn: 3210),
+        VolumnData(volumn: 3210),
+        VolumnData(volumn: 3210),
+        VolumnData(volumn: 3210),
+        VolumnData(volumn: 3210),
+        VolumnData(volumn: 3210),
+        VolumnData(volumn: 3210),
+        VolumnData(volumn: 3210),
+        VolumnData(volumn: 3210)
+    ]
+}

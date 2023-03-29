@@ -110,10 +110,7 @@
 				49ED905F29D39AB30003E962 /* MainViewController.swift */,
 				49ED906C29D3E1E60003E962 /* OrderPaperView.swift */,
 				49ED907029D3F53A0003E962 /* TopInfoView.swift */,
-				49ED907229D3FF2F0003E962 /* OrderTableView.swift */,
-				49ED907629D414680003E962 /* BidVolumnView.swift */,
-				49ED907829D41CB20003E962 /* BidVolumnCell.swift */,
-				49ED907A29D4235F0003E962 /* VolumnData.swift */,
+				49FCACEF29D4EE090063A847 /* OrderTable */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -126,6 +123,17 @@
 				49ED906E29D3E2CD0003E962 /* Extension+UIView.swift */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		49FCACEF29D4EE090063A847 /* OrderTable */ = {
+			isa = PBXGroup;
+			children = (
+				49ED907229D3FF2F0003E962 /* OrderTableView.swift */,
+				49ED907629D414680003E962 /* BidVolumnView.swift */,
+				49ED907829D41CB20003E962 /* BidVolumnCell.swift */,
+				49ED907A29D4235F0003E962 /* VolumnData.swift */,
+			);
+			path = OrderTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -25,9 +25,12 @@ final class BidVolumnView: UIView {
         return collectionView
     }()
     
+    private var dataSource: UICollectionViewDiffableDataSource<Int, VolumnData>!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupViews()
+        configurationDataSource()
     }
     
     required init?(coder: NSCoder) {
@@ -55,6 +58,24 @@ private extension BidVolumnView {
         
         return layout
     }
+    
+    func configurationDataSource() {
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BidVolumnCell.identifier, for: indexPath) as? BidVolumnCell else { return UICollectionViewCell() }
+            cell.setupCell()
+            
+            return cell
+        })
+        
+        applySnapshot()
+    }
+    
+    func applySnapshot() {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, VolumnData>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(VolumnData.allItem)
+        dataSource.apply(snapshot, animatingDifferences: true)
+    }
 }
 
 
@@ -67,7 +88,7 @@ struct BidVolumnViewPreview: PreviewProvider {
         UIView.UIViewPreview {
             BidVolumnView()
         }
-        .frame(width: UIScreen.main.bounds.width, height: 300.0)
+        .frame(width: Constants.OrderPaper.volumnViewWidth, height: 300.0)
     }
 }
 

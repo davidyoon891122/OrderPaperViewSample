@@ -9,12 +9,7 @@ import UIKit
 import SnapKit
 
 final class OrderTableView: UIView {
-    private lazy var bidVolumnView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemBlue.withAlphaComponent(0.3)
-    
-        return view
-    }()
+    private lazy var bidVolumnView = BidVolumnView()
     
     private lazy var askPriceView: UIView = {
         let view = UIView()

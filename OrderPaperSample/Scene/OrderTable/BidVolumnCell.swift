@@ -24,7 +24,7 @@ final class BidVolumnCell: UICollectionViewCell {
     
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .secondarySystemBackground
+        view.backgroundColor = .systemBlue.withAlphaComponent(0.3)
         [
             volumnLabel
         ]
