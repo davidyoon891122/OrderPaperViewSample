@@ -11,12 +11,7 @@ import SnapKit
 final class OrderTableView: UIView {
     private lazy var bidVolumeView = BidVolumeView()
     
-    private lazy var askPriceView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemRed.withAlphaComponent(0.3)
-        
-        return view
-    }()
+    private lazy var askPriceView = AskPriceView()
     
     private lazy var rightInfoView: UIView = {
         let view = UIView()

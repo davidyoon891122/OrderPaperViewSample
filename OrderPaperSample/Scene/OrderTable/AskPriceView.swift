@@ -1,14 +1,14 @@
 //
-//  BidVolumeView.swift
+//  AskPriceView.swift
 //  OrderPaperSample
 //
-//  Created by jiwon Yoon on 2023/03/29.
+//  Created by jiwon Yoon on 2023/03/30.
 //
 
 import UIKit
 import SnapKit
 
-final class BidVolumeView: UIView {
+final class AskPriceView: UIView {
     private lazy var collectionView: UICollectionView = {
         let layout = createLayout()
         
@@ -18,19 +18,19 @@ final class BidVolumeView: UIView {
         )
         
         collectionView.register(
-            BidVolumeCell.self,
-            forCellWithReuseIdentifier: BidVolumeCell.identifier
+            AskPriceCell.self,
+            forCellWithReuseIdentifier: AskPriceCell.identifier
         )
         
         return collectionView
     }()
     
-    private var dataSource: UICollectionViewDiffableDataSource<Int, VolumeData>!
+    private var dataSource: UICollectionViewDiffableDataSource<Int, PriceData>!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        configurationDataSource()
+        configureDataSource()
     }
     
     required init?(coder: NSCoder) {
@@ -38,7 +38,7 @@ final class BidVolumeView: UIView {
     }
 }
 
-private extension BidVolumeView {
+private extension AskPriceView {
     func setupViews() {
         addSubview(collectionView)
         
@@ -59,38 +59,34 @@ private extension BidVolumeView {
         return layout
     }
     
-    func configurationDataSource() {
+    func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BidVolumeCell.identifier, for: indexPath) as? BidVolumeCell else { return UICollectionViewCell() }
-            cell.setupCell()
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AskPriceCell.identifier, for: indexPath) as? AskPriceCell else { return UICollectionViewCell() }
             
             return cell
         })
-        
         applySnapshot()
     }
     
     func applySnapshot() {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, VolumeData>()
+        var snapshot = NSDiffableDataSourceSnapshot<Int, PriceData>()
         snapshot.appendSections([0])
-        snapshot.appendItems(VolumeData.allItem)
+        snapshot.appendItems(PriceData.allItem)
+        
         dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 
-
 #if canImport(SwiftUI) && DEBUG
-
 import SwiftUI
 
-struct BidVolumeViewPreview: PreviewProvider {
+struct AskPriceViewPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
-            BidVolumeView()
+            AskPriceView()
         }
-        .frame(width: Constants.OrderPaper.volumeViewWidth, height: 300.0)
+        .frame(width: Constants.OrderPaper.priceViewWidth, height: 300.0)
     }
 }
-
 
 #endif
