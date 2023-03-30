@@ -19,6 +19,16 @@ enum Item: Hashable {
 }
 
 final class RightInfoView: UIView {
+    private lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.currentPage = 0
+        pageControl.pageIndicatorTintColor = .lightGray
+        pageControl.currentPageIndicatorTintColor = .label
+        pageControl.numberOfPages = 2
+        
+        return pageControl
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let layout = createLayout()
         
@@ -54,10 +64,27 @@ final class RightInfoView: UIView {
 
 private extension RightInfoView {
     func setupViews() {
-        addSubview(collectionView)
+        [
+            collectionView,
+            pageControl
+        ]
+            .forEach {
+                addSubview($0)
+            }
         
         collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalTo(pageControl.snp.top)
+        }
+        
+        pageControl.snp.makeConstraints {
+            $0.height.equalTo(10.0)
+            $0.width.equalTo(100)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
     }
     
@@ -71,6 +98,13 @@ private extension RightInfoView {
             let section = NSCollectionLayoutSection(group: group)
             
             section.orthogonalScrollingBehavior = .paging
+            
+            section.visibleItemsInvalidationHandler =  { item, offset, env in
+                let index = Int((offset.x / env.container.contentSize.width).rounded(.up))
+                print(">>>> \(index)")
+                self.pageControl.currentPage = index
+                
+            }
             
             return section
             
