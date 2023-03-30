@@ -26,6 +26,8 @@ final class RightInfoView: UIView {
         pageControl.currentPageIndicatorTintColor = .label
         pageControl.numberOfPages = 2
         
+        pageControl.isUserInteractionEnabled = false
+        
         return pageControl
     }()
     
@@ -82,8 +84,7 @@ private extension RightInfoView {
         pageControl.snp.makeConstraints {
             $0.height.equalTo(10.0)
             $0.width.equalTo(100)
-            $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview()
+            $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
     }
@@ -101,7 +102,6 @@ private extension RightInfoView {
             
             section.visibleItemsInvalidationHandler =  { item, offset, env in
                 let index = Int((offset.x / env.container.contentSize.width).rounded(.up))
-                print(">>>> \(index)")
                 self.pageControl.currentPage = index
                 
             }

@@ -167,9 +167,6 @@ final class FirstInfoCell: UICollectionViewCell {
     
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.layer.borderColor = UIColor.gray.cgColor
-        view.layer.borderWidth = 1.0
-        
         [
             fiftyTwoWeekHighTitleLabel,
             fiftyTwoWeekHighValueLabel,
