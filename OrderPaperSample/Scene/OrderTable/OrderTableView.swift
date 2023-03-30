@@ -13,12 +13,7 @@ final class OrderTableView: UIView {
     
     private lazy var askPriceView = AskPriceView()
     
-    private lazy var rightInfoView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray.withAlphaComponent(0.3)
-    
-        return view
-    }()
+    private lazy var rightInfoView = RightInfoView()
     
     private lazy var topHStackView: UIStackView = {
         let stackView = UIStackView()

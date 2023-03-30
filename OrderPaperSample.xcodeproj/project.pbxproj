@@ -26,6 +26,11 @@
 		49FCACF229D4EFCE0063A847 /* AskPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCACF129D4EFCE0063A847 /* AskPriceView.swift */; };
 		49FCACF429D4F06B0063A847 /* AskPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCACF329D4F06B0063A847 /* AskPriceCell.swift */; };
 		49FCACF629D4F66F0063A847 /* PriceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCACF529D4F66F0063A847 /* PriceData.swift */; };
+		49FCACF929D4FA820063A847 /* RightInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCACF829D4FA820063A847 /* RightInfoView.swift */; };
+		49FCACFB29D502230063A847 /* FirstInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCACFA29D502230063A847 /* FirstInfoCell.swift */; };
+		49FCACFD29D5042A0063A847 /* SecondInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCACFC29D5042A0063A847 /* SecondInfoCell.swift */; };
+		49FCACFF29D5056C0063A847 /* FirstInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCACFE29D5056C0063A847 /* FirstInfoData.swift */; };
+		49FCAD0129D505B80063A847 /* SecondInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCAD0029D505B80063A847 /* SecondInfoData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +54,11 @@
 		49FCACF129D4EFCE0063A847 /* AskPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskPriceView.swift; sourceTree = "<group>"; };
 		49FCACF329D4F06B0063A847 /* AskPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskPriceCell.swift; sourceTree = "<group>"; };
 		49FCACF529D4F66F0063A847 /* PriceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceData.swift; sourceTree = "<group>"; };
+		49FCACF829D4FA820063A847 /* RightInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightInfoView.swift; sourceTree = "<group>"; };
+		49FCACFA29D502230063A847 /* FirstInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstInfoCell.swift; sourceTree = "<group>"; };
+		49FCACFC29D5042A0063A847 /* SecondInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInfoCell.swift; sourceTree = "<group>"; };
+		49FCACFE29D5056C0063A847 /* FirstInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstInfoData.swift; sourceTree = "<group>"; };
+		49FCAD0029D505B80063A847 /* SecondInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInfoData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,9 +147,13 @@
 				49ED907229D3FF2F0003E962 /* OrderTableView.swift */,
 				49FCACF029D4EFBA0063A847 /* BidVolume */,
 				49ED907A29D4235F0003E962 /* VolumeData.swift */,
-				49FCACF129D4EFCE0063A847 /* AskPriceView.swift */,
-				49FCACF329D4F06B0063A847 /* AskPriceCell.swift */,
+				49FCACF729D4F9B40063A847 /* AskVolume */,
 				49FCACF529D4F66F0063A847 /* PriceData.swift */,
+				49FCACF829D4FA820063A847 /* RightInfoView.swift */,
+				49FCACFA29D502230063A847 /* FirstInfoCell.swift */,
+				49FCACFC29D5042A0063A847 /* SecondInfoCell.swift */,
+				49FCAD0029D505B80063A847 /* SecondInfoData.swift */,
+				49FCACFE29D5056C0063A847 /* FirstInfoData.swift */,
 			);
 			path = OrderTable;
 			sourceTree = "<group>";
@@ -151,6 +165,15 @@
 				49ED907829D41CB20003E962 /* BidVolumeCell.swift */,
 			);
 			path = BidVolume;
+			sourceTree = "<group>";
+		};
+		49FCACF729D4F9B40063A847 /* AskVolume */ = {
+			isa = PBXGroup;
+			children = (
+				49FCACF129D4EFCE0063A847 /* AskPriceView.swift */,
+				49FCACF329D4F06B0063A847 /* AskPriceCell.swift */,
+			);
+			path = AskVolume;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,17 +253,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FCACF229D4EFCE0063A847 /* AskPriceView.swift in Sources */,
+				49FCACFD29D5042A0063A847 /* SecondInfoCell.swift in Sources */,
 				49ED906F29D3E2CD0003E962 /* Extension+UIView.swift in Sources */,
 				49ED906D29D3E1E60003E962 /* OrderPaperView.swift in Sources */,
 				49ED907929D41CB20003E962 /* BidVolumeCell.swift in Sources */,
+				49FCACF929D4FA820063A847 /* RightInfoView.swift in Sources */,
 				49ED906229D39D530003E962 /* Extension+UIViewController.swift in Sources */,
 				49ED906029D39AB30003E962 /* MainViewController.swift in Sources */,
+				49FCACFF29D5056C0063A847 /* FirstInfoData.swift in Sources */,
 				49FCACF429D4F06B0063A847 /* AskPriceCell.swift in Sources */,
 				49FCACF629D4F66F0063A847 /* PriceData.swift in Sources */,
 				49ED904C29D39A460003E962 /* AppDelegate.swift in Sources */,
 				49ED907529D4049C0003E962 /* Constants.swift in Sources */,
 				49ED907729D414680003E962 /* BidVolumeView.swift in Sources */,
+				49FCACFB29D502230063A847 /* FirstInfoCell.swift in Sources */,
 				49ED906429D39E1A0003E962 /* DevideType.swift in Sources */,
+				49FCAD0129D505B80063A847 /* SecondInfoData.swift in Sources */,
 				49ED907129D3F53A0003E962 /* TopInfoView.swift in Sources */,
 				49ED907B29D4235F0003E962 /* VolumeData.swift in Sources */,
 				49ED904E29D39A460003E962 /* SceneDelegate.swift in Sources */,
