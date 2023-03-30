@@ -31,6 +31,7 @@
 		49FCACFD29D5042A0063A847 /* SecondInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCACFC29D5042A0063A847 /* SecondInfoCell.swift */; };
 		49FCACFF29D5056C0063A847 /* FirstInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCACFE29D5056C0063A847 /* FirstInfoData.swift */; };
 		49FCAD0129D505B80063A847 /* SecondInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCAD0029D505B80063A847 /* SecondInfoData.swift */; };
+		49FCAD0329D53C550063A847 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCAD0229D53C550063A847 /* SeparatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		49FCACFC29D5042A0063A847 /* SecondInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInfoCell.swift; sourceTree = "<group>"; };
 		49FCACFE29D5056C0063A847 /* FirstInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstInfoData.swift; sourceTree = "<group>"; };
 		49FCAD0029D505B80063A847 /* SecondInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInfoData.swift; sourceTree = "<group>"; };
+		49FCAD0229D53C550063A847 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				49ED905F29D39AB30003E962 /* MainViewController.swift */,
 				49ED906C29D3E1E60003E962 /* OrderPaperView.swift */,
 				49ED907029D3F53A0003E962 /* TopInfoView.swift */,
+				49FCAD0429D53C5A0063A847 /* CustomView */,
 				49FCACEF29D4EE090063A847 /* OrderTable */,
 			);
 			path = Scene;
@@ -174,6 +177,14 @@
 				49FCACF329D4F06B0063A847 /* AskPriceCell.swift */,
 			);
 			path = AskVolume;
+			sourceTree = "<group>";
+		};
+		49FCAD0429D53C5A0063A847 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				49FCAD0229D53C550063A847 /* SeparatorView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FCAD0329D53C550063A847 /* SeparatorView.swift in Sources */,
 				49FCACF229D4EFCE0063A847 /* AskPriceView.swift in Sources */,
 				49FCACFD29D5042A0063A847 /* SecondInfoCell.swift in Sources */,
 				49ED906F29D3E2CD0003E962 /* Extension+UIView.swift in Sources */,

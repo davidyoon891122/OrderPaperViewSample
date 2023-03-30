@@ -17,6 +17,13 @@ final class MainViewController: UIViewController {
     
     private let orderPaperView = OrderPaperView()
     
+    private lazy var scrollTestView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        
+        return view
+    }()
+    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -25,13 +32,17 @@ final class MainViewController: UIViewController {
         orderPaperView.backgroundColor = .red
         
         [
-            orderPaperView
+            orderPaperView,
+            scrollTestView
         ]
             .forEach {
                 stackView.addArrangedSubview($0)
             }
         
         
+        scrollTestView.snp.makeConstraints {
+            $0.height.equalTo(700)
+        }
         
         return stackView
     }()

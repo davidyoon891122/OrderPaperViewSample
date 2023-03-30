@@ -39,45 +39,6 @@ final class RightInfoView: UIView {
         return collectionView
     }()
     
-    
-    private lazy var fiftyTwoWeekHighTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 10.0, weight: .bold)
-        label.textColor = .lightGray
-        label.text = "52 Week\nHigh"
-        
-        return label
-    }()
-    
-    private lazy var fiftyTwoWeekHighValueLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 8.0, weight: .medium)
-        label.textColor = .label
-        label.text = "19.6837"
-        
-        return label
-    }()
-    
-    private lazy var fiftyTwoWeekLowTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 10.0, weight: .bold)
-        label.textColor = .lightGray
-        label.text = "52 Week\nLow"
-        
-        
-        
-        return label
-    }()
-    
-    private lazy var fiftyTwoWeekLowValueLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 8.0, weight: .medium)
-        label.textColor = .label
-        label.text = "6.0945"
-        
-        return label
-    }()
-    
     private var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
     
     override init(frame: CGRect) {
