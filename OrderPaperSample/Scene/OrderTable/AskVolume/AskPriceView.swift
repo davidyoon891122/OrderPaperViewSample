@@ -22,6 +22,8 @@ final class AskPriceView: UIView {
             forCellWithReuseIdentifier: AskPriceCell.identifier
         )
         
+        collectionView.isScrollEnabled = false
+        
         return collectionView
     }()
     

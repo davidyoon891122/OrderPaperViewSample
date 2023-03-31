@@ -22,6 +22,8 @@ final class BidVolumeView: UIView {
             forCellWithReuseIdentifier: BidVolumeCell.identifier
         )
         
+        collectionView.isScrollEnabled = false
+        
         return collectionView
     }()
     

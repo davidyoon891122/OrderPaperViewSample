@@ -13,7 +13,7 @@ final class BidVolumeCell: UICollectionViewCell {
     
     private lazy var volumeLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14.0, weight: .bold)
+        label.font = .systemFont(ofSize: 13.0, weight: .medium)
         label.textColor = .label
         label.text = "3,420"
         label.textAlignment = .right

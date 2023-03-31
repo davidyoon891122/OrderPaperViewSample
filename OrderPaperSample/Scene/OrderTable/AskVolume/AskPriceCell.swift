@@ -32,7 +32,8 @@ final class AskPriceCell: UICollectionViewCell {
     
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemRed.withAlphaComponent(0.3)
+        view.layer.borderWidth = 0.5
+        view.layer.borderColor = UIColor.secondarySystemBackground.cgColor
         
         [
             priceLabel,
