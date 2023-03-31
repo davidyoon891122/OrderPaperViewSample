@@ -34,7 +34,7 @@ final class OrderPaperView: UIView {
         orderTableView.snp.makeConstraints {
             $0.top.equalTo(topInfoView.snp.bottom)
             $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview()
+            $0.trailing.equalToSuperview().priority(.low)
             $0.bottom.equalToSuperview()
         }
         
