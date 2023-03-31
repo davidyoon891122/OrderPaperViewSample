@@ -26,7 +26,7 @@ final class OrderPaperView: UIView {
         
         let offset: CGFloat = 16.0
         topInfoView.snp.makeConstraints {
-            $0.top.equalToSuperview()
+            $0.top.equalToSuperview().priority(.low)
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
         }

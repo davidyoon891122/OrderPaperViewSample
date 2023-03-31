@@ -19,6 +19,18 @@ final class OrderTableView: UIView {
         let stackView = UIStackView()
         stackView.distribution = .fillProportionally
         
+        bidVolumeView.snp.makeConstraints {
+            $0.width.equalTo(Constants.OrderPaper.volumeViewWidth)
+        }
+        
+        askPriceView.snp.makeConstraints {
+            $0.width.equalTo(Constants.OrderPaper.priceViewWidth)
+        }
+        
+        rightInfoView.snp.makeConstraints {
+            $0.width.equalTo(Constants.OrderPaper.volumeViewWidth)
+        }
+        
         [
             bidVolumeView,
             askPriceView,
@@ -31,45 +43,42 @@ final class OrderTableView: UIView {
         return stackView
     }()
     
+    private lazy var matchStrengthView = UIView()
     
-    private lazy var containerView: UIView = {
-        let view = UIView()
+    private lazy var bidPriceView = UIView()
+    
+    private lazy var askVolumnView = UIView()
+    
+    private lazy var bottomHStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.distribution = .fillProportionally
         
-        view.backgroundColor = .secondarySystemBackground
-        view.layer.borderColor = UIColor.lightGray.cgColor
-        view.layer.borderWidth = 1.0
-        
-        
-        [
-            bidVolumeView,
-            askPriceView,
-            rightInfoView
-        ]
-            .forEach {
-                view.addSubview($0)
-            }
-        
-        bidVolumeView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
+        matchStrengthView.backgroundColor = .red
+        matchStrengthView.snp.makeConstraints {
             $0.width.equalTo(Constants.OrderPaper.volumeViewWidth)
         }
         
-        askPriceView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalTo(bidVolumeView.snp.trailing)
+        bidPriceView.backgroundColor = .orange
+        bidPriceView.snp.makeConstraints {
             $0.width.equalTo(Constants.OrderPaper.priceViewWidth)
         }
         
-        rightInfoView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.trailing.equalToSuperview()
+        askVolumnView.backgroundColor = .yellow
+        askVolumnView.snp.makeConstraints {
             $0.width.equalTo(Constants.OrderPaper.volumeViewWidth)
         }
         
+        [
+            matchStrengthView,
+            bidPriceView,
+            askVolumnView
+        ]
+            .forEach {
+                stackView.addArrangedSubview($0)
+            }
         
         
-        return view
+        return stackView
     }()
     
     override init(frame: CGRect) {
@@ -84,11 +93,25 @@ final class OrderTableView: UIView {
 
 private extension OrderTableView {
     func setupViews() {
-        addSubview(topHStackView)
+        [
+            topHStackView,
+            bottomHStackView
+        ]
+            .forEach {
+                addSubview($0)
+            }
         
         topHStackView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(300.0)
+        }
+        
+        bottomHStackView.snp.makeConstraints {
+            $0.top.equalTo(topHStackView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(300.0)
+            $0.bottom.equalToSuperview()
         }
     }
 }
@@ -105,7 +128,7 @@ struct OrderTableViewPreview: PreviewProvider {
         UIView.UIViewPreview {
             OrderTableView()
         }
-        .frame(width: UIScreen.main.bounds.width, height: 300.0)
+        .frame(width: UIScreen.main.bounds.width, height: 600.0)
     }
 }
 
