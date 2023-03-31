@@ -32,6 +32,7 @@
 		49FCACFF29D5056C0063A847 /* FirstInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCACFE29D5056C0063A847 /* FirstInfoData.swift */; };
 		49FCAD0129D505B80063A847 /* SecondInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCAD0029D505B80063A847 /* SecondInfoData.swift */; };
 		49FCAD0329D53C550063A847 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCAD0229D53C550063A847 /* SeparatorView.swift */; };
+		49FCAD0629D5773E0063A847 /* TitleAndValueVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCAD0529D5773E0063A847 /* TitleAndValueVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		49FCACFE29D5056C0063A847 /* FirstInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstInfoData.swift; sourceTree = "<group>"; };
 		49FCAD0029D505B80063A847 /* SecondInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInfoData.swift; sourceTree = "<group>"; };
 		49FCAD0229D53C550063A847 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		49FCAD0529D5773E0063A847 /* TitleAndValueVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndValueVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				49FCAD0229D53C550063A847 /* SeparatorView.swift */,
+				49FCAD0529D5773E0063A847 /* TitleAndValueVIew.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				49ED906F29D3E2CD0003E962 /* Extension+UIView.swift in Sources */,
 				49ED906D29D3E1E60003E962 /* OrderPaperView.swift in Sources */,
 				49ED907929D41CB20003E962 /* BidVolumeCell.swift in Sources */,
+				49FCAD0629D5773E0063A847 /* TitleAndValueVIew.swift in Sources */,
 				49FCACF929D4FA820063A847 /* RightInfoView.swift in Sources */,
 				49ED906229D39D530003E962 /* Extension+UIViewController.swift in Sources */,
 				49ED906029D39AB30003E962 /* MainViewController.swift in Sources */,

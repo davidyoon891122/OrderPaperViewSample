@@ -20,3 +20,20 @@ final class SecondInfoCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+
+#if canImport(SwiftUI) && DEBUG
+
+import SwiftUI
+
+struct SecondInfoCellPreview: PreviewProvider {
+    static var previews: some View {
+        UIView.UIViewPreview {
+            SecondInfoCell()
+        }
+        .frame(width: Constants.OrderPaper.volumeViewWidth, height: 300.0)
+    }
+}
+
+
+#endif

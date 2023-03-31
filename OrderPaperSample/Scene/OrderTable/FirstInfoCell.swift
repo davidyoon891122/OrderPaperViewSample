@@ -11,66 +11,11 @@ import SnapKit
 final class FirstInfoCell: UICollectionViewCell {
     static let identifier = "FirstInfoCell"
     
-    private lazy var fiftyTwoWeekHighTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 10.0, weight: .bold)
-        label.textColor = .lightGray
-        label.text = "52 Week\nHigh"
-        label.numberOfLines = 2
-        
-        return label
-    }()
+    private lazy var fiftyTwoWeekHighView = TitleAndValueView(titleValue: "52 Week\nHigh", contentValue: "19.6800", topOffset: 4)
     
-    private lazy var fiftyTwoWeekHighValueLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 8.0, weight: .medium)
-        label.textColor = .label
-        label.text = "19.6837"
-        label.textAlignment = .right
-        
-        return label
-    }()
+    private lazy var fiftyTwoWeekLowView = TitleAndValueView(titleValue: "52 Week\nLow", contentValue: "6.0945", topOffset: 4)
     
-    private lazy var fiftyTwoWeekLowTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 10.0, weight: .bold)
-        label.textColor = .lightGray
-        label.text = "52 Week\nLow"
-        label.numberOfLines = 2
-        
-        return label
-    }()
-    
-    private lazy var fiftyTwoWeekLowValueLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 8.0, weight: .medium)
-        label.textColor = .label
-        label.text = "6.0945"
-        label.textAlignment = .right
-        
-        return label
-    }()
-    
-    private lazy var priceQuotationTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 10.0, weight: .bold)
-        label.textColor = .lightGray
-        label.text = "Price\nQuotation"
-        label.numberOfLines = 2
-        
-        return label
-    }()
-    
-    private lazy var priceQuotationLowValueLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 8.0, weight: .medium)
-        label.textColor = .label
-        label.text = "0.0100"
-        label.textAlignment = .right
-        
-        return label
-    }()
-    
+    private lazy var priceQuotationView = TitleAndValueView(titleValue: "Price\nQuotation", contentValue: "0.0100", topOffset: 4)
     
     private let separatorView = SeparatorView(
         size: 0.5,
@@ -168,12 +113,9 @@ final class FirstInfoCell: UICollectionViewCell {
     private lazy var containerView: UIView = {
         let view = UIView()
         [
-            fiftyTwoWeekHighTitleLabel,
-            fiftyTwoWeekHighValueLabel,
-            fiftyTwoWeekLowTitleLabel,
-            fiftyTwoWeekLowValueLabel,
-            priceQuotationTitleLabel,
-            priceQuotationLowValueLabel,
+            fiftyTwoWeekHighView,
+            fiftyTwoWeekLowView,
+            priceQuotationView,
             separatorView,
             openTitleLabel,
             openValueLabel,
@@ -190,47 +132,26 @@ final class FirstInfoCell: UICollectionViewCell {
             }
         
         let offset: CGFloat = 8.0
-        fiftyTwoWeekHighTitleLabel.snp.makeConstraints {
+        fiftyTwoWeekHighView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(offset).priority(.low)
-            $0.leading.equalToSuperview().offset(offset)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
         }
-        
-        fiftyTwoWeekHighTitleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        
-        fiftyTwoWeekHighValueLabel.snp.makeConstraints {
-            $0.centerY.equalTo(fiftyTwoWeekHighTitleLabel)
-            $0.leading.equalTo(fiftyTwoWeekHighTitleLabel.snp.trailing).offset(offset)
-            $0.trailing.equalToSuperview().offset(-offset)
+    
+        fiftyTwoWeekLowView.snp.makeConstraints {
+            $0.top.equalTo(fiftyTwoWeekHighView.snp.bottom)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
         }
-        
-        fiftyTwoWeekLowTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(fiftyTwoWeekHighTitleLabel.snp.bottom).offset(offset)
-            $0.leading.equalToSuperview().offset(offset)
-        }
-        
-        fiftyTwoWeekLowTitleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        
-        fiftyTwoWeekLowValueLabel.snp.makeConstraints {
-            $0.centerY.equalTo(fiftyTwoWeekLowTitleLabel)
-            $0.leading.equalTo(fiftyTwoWeekLowTitleLabel.snp.trailing).offset(offset)
-            $0.trailing.equalToSuperview().offset(-offset)
-        }
-        
-        priceQuotationTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(fiftyTwoWeekLowTitleLabel.snp.bottom).offset(offset)
-            $0.leading.equalToSuperview().offset(offset)
-        }
-        
-        priceQuotationTitleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        
-        priceQuotationLowValueLabel.snp.makeConstraints {
-            $0.centerY.equalTo(priceQuotationTitleLabel)
-            $0.leading.equalTo(priceQuotationTitleLabel.snp.trailing).offset(offset)
-            $0.trailing.equalToSuperview().offset(-offset)
+       
+        priceQuotationView.snp.makeConstraints {
+            $0.top.equalTo(fiftyTwoWeekLowView.snp.bottom)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
         }
         
         separatorView.snp.makeConstraints {
-            $0.top.equalTo(priceQuotationTitleLabel.snp.bottom).offset(offset)
+            $0.top.equalTo(priceQuotationView.snp.bottom).offset(4)
             $0.leading.equalToSuperview().offset(offset)
             $0.trailing.equalToSuperview().offset(-offset)
         }
@@ -328,7 +249,7 @@ private extension FirstInfoCell {
 
 import SwiftUI
 
-struct FirstInfoCellwPreview: PreviewProvider {
+struct FirstInfoCellPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
             FirstInfoCell()
