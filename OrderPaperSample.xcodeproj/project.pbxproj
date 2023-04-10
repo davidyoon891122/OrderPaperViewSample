@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49E5257629D6C2B1004D649C /* MatchStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5257529D6C2B1004D649C /* MatchStrengthView.swift */; };
+		49E5257829D6C803004D649C /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5257729D6C803004D649C /* MatchCell.swift */; };
 		49ED904C29D39A460003E962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED904B29D39A460003E962 /* AppDelegate.swift */; };
 		49ED904E29D39A460003E962 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED904D29D39A460003E962 /* SceneDelegate.swift */; };
 		49ED905529D39A480003E962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ED905429D39A480003E962 /* Assets.xcassets */; };
@@ -33,9 +35,12 @@
 		49FCAD0129D505B80063A847 /* SecondInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCAD0029D505B80063A847 /* SecondInfoData.swift */; };
 		49FCAD0329D53C550063A847 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCAD0229D53C550063A847 /* SeparatorView.swift */; };
 		49FCAD0629D5773E0063A847 /* TitleAndValueVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCAD0529D5773E0063A847 /* TitleAndValueVIew.swift */; };
+		49FF0FE529E00350007F62B5 /* MatchInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FF0FE429E00350007F62B5 /* MatchInfoData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49E5257529D6C2B1004D649C /* MatchStrengthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStrengthView.swift; sourceTree = "<group>"; };
+		49E5257729D6C803004D649C /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		49ED904829D39A460003E962 /* OrderPaperSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderPaperSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49ED904B29D39A460003E962 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49ED904D29D39A460003E962 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 		49FCAD0029D505B80063A847 /* SecondInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInfoData.swift; sourceTree = "<group>"; };
 		49FCAD0229D53C550063A847 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		49FCAD0529D5773E0063A847 /* TitleAndValueVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndValueVIew.swift; sourceTree = "<group>"; };
+		49FF0FE429E00350007F62B5 /* MatchInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,9 @@
 				49FCACF029D4EFBA0063A847 /* BidVolume */,
 				49FCACF729D4F9B40063A847 /* AskVolume */,
 				49E5257429D66F26004D649C /* RightInfo */,
+				49E5257529D6C2B1004D649C /* MatchStrengthView.swift */,
+				49E5257729D6C803004D649C /* MatchCell.swift */,
+				49FF0FE429E00350007F62B5 /* MatchInfoData.swift */,
 			);
 			path = OrderTable;
 			sourceTree = "<group>";
@@ -283,14 +292,17 @@
 				49FCAD0629D5773E0063A847 /* TitleAndValueVIew.swift in Sources */,
 				49FCACF929D4FA820063A847 /* RightInfoView.swift in Sources */,
 				49ED906229D39D530003E962 /* Extension+UIViewController.swift in Sources */,
+				49FF0FE529E00350007F62B5 /* MatchInfoData.swift in Sources */,
 				49ED906029D39AB30003E962 /* MainViewController.swift in Sources */,
 				49FCACFF29D5056C0063A847 /* FirstInfoData.swift in Sources */,
 				49FCACF429D4F06B0063A847 /* AskPriceCell.swift in Sources */,
 				49FCACF629D4F66F0063A847 /* PriceData.swift in Sources */,
 				49ED904C29D39A460003E962 /* AppDelegate.swift in Sources */,
 				49ED907529D4049C0003E962 /* Constants.swift in Sources */,
+				49E5257829D6C803004D649C /* MatchCell.swift in Sources */,
 				49ED907729D414680003E962 /* BidVolumeView.swift in Sources */,
 				49FCACFB29D502230063A847 /* FirstInfoCell.swift in Sources */,
+				49E5257629D6C2B1004D649C /* MatchStrengthView.swift in Sources */,
 				49ED906429D39E1A0003E962 /* DevideType.swift in Sources */,
 				49FCAD0129D505B80063A847 /* SecondInfoData.swift in Sources */,
 				49ED907129D3F53A0003E962 /* TopInfoView.swift in Sources */,

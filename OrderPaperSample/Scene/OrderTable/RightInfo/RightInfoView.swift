@@ -8,12 +8,12 @@
 import UIKit
 import SnapKit
 
-enum Section: String, CaseIterable, Hashable {
+enum RightInfoSection: String, CaseIterable, Hashable {
     case main
 }
 
 
-enum Item: Hashable {
+enum RightInfoItem: Hashable {
     case first(FirstInfoData)
     case second(SecondInfoData)
 }
@@ -51,7 +51,7 @@ final class RightInfoView: UIView {
         return collectionView
     }()
     
-    private var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
+    private var dataSource: UICollectionViewDiffableDataSource<RightInfoSection, RightInfoItem>!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -114,7 +114,7 @@ private extension RightInfoView {
     }
     
     func configureDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Item> (collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
+        dataSource = UICollectionViewDiffableDataSource<RightInfoSection, RightInfoItem> (collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             
             switch item {
                 
@@ -131,7 +131,7 @@ private extension RightInfoView {
     }
     
     func applySnapshot() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        var snapshot = NSDiffableDataSourceSnapshot<RightInfoSection, RightInfoItem>()
         snapshot.appendSections([.main])
         
         snapshot.appendItems([.first(FirstInfoData.item), .second(SecondInfoData.item)])
@@ -143,7 +143,6 @@ private extension RightInfoView {
 
 
 #if canImport(SwiftUI) && DEBUG
-
 import SwiftUI
 
 struct RightInfoViewPreview: PreviewProvider {
@@ -154,7 +153,5 @@ struct RightInfoViewPreview: PreviewProvider {
         .frame(width: Constants.OrderPaper.volumeViewWidth, height: 300.0)
     }
 }
-
-
 #endif
 
