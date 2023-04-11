@@ -1,22 +1,22 @@
 //
-//  BidVolumeCell.swift
+//  AskVolumeCell.swift
 //  OrderPaperSample
 //
-//  Created by jiwon Yoon on 2023/03/29.
+//  Created by jiwon Yoon on 2023/04/11.
 //
 
 import UIKit
 import SnapKit
 
-final class BidVolumeCell: UICollectionViewCell {
-    static let identifier = "BidVolumeCell"
+final class AskVolumeCell: UICollectionViewCell {
+    static let identifier = "AskVolumeCell"
     
     private lazy var volumeLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13.0, weight: .medium)
         label.textColor = .label
         label.text = "3,420"
-        label.textAlignment = .right
+        label.textAlignment = .left
         
         return label
     }()
@@ -24,7 +24,7 @@ final class BidVolumeCell: UICollectionViewCell {
     
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemBlue.withAlphaComponent(0.3)
+        view.backgroundColor = .systemRed.withAlphaComponent(0.3)
         [
             volumeLabel
         ]
@@ -53,7 +53,7 @@ final class BidVolumeCell: UICollectionViewCell {
     }
 }
 
-private extension BidVolumeCell {
+private extension AskVolumeCell {
     func setupViews() {
         [
             containerView
@@ -68,15 +68,14 @@ private extension BidVolumeCell {
     }
 }
 
-
 #if canImport(SwiftUI) && DEBUG
 
 import SwiftUI
 
-struct BidVolumeCellPreview: PreviewProvider {
+struct AskVolumeCellPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
-            BidVolumeCell()
+            AskVolumeCell()
         }
         .frame(width: Constants.OrderPaper.volumeViewWidth, height: 30.0)
     }

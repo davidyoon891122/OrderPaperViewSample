@@ -12,6 +12,8 @@
 		4954A2F229E51BD000E815C9 /* ProfitViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A2F129E51BD000E815C9 /* ProfitViewCell.swift */; };
 		4954A2F429E537BC00E815C9 /* ProfitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A2F329E537BC00E815C9 /* ProfitData.swift */; };
 		4954A2F629E541D500E815C9 /* BidPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A2F529E541D500E815C9 /* BidPriceView.swift */; };
+		4954A2F929E5440300E815C9 /* AskVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A2F829E5440300E815C9 /* AskVolumeView.swift */; };
+		4954A2FB29E5445C00E815C9 /* AskVolumeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A2FA29E5445C00E815C9 /* AskVolumeCell.swift */; };
 		49E5257629D6C2B1004D649C /* MatchStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5257529D6C2B1004D649C /* MatchStrengthView.swift */; };
 		49E5257829D6C803004D649C /* MatchContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5257729D6C803004D649C /* MatchContainerCell.swift */; };
 		49ED904C29D39A460003E962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED904B29D39A460003E962 /* AppDelegate.swift */; };
@@ -49,6 +51,8 @@
 		4954A2F129E51BD000E815C9 /* ProfitViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitViewCell.swift; sourceTree = "<group>"; };
 		4954A2F329E537BC00E815C9 /* ProfitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitData.swift; sourceTree = "<group>"; };
 		4954A2F529E541D500E815C9 /* BidPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidPriceView.swift; sourceTree = "<group>"; };
+		4954A2F829E5440300E815C9 /* AskVolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskVolumeView.swift; sourceTree = "<group>"; };
+		4954A2FA29E5445C00E815C9 /* AskVolumeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskVolumeCell.swift; sourceTree = "<group>"; };
 		49E5257529D6C2B1004D649C /* MatchStrengthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStrengthView.swift; sourceTree = "<group>"; };
 		49E5257729D6C803004D649C /* MatchContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchContainerCell.swift; sourceTree = "<group>"; };
 		49ED904829D39A460003E962 /* OrderPaperSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderPaperSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,15 @@
 				4954A2F529E541D500E815C9 /* BidPriceView.swift */,
 			);
 			path = BidPrice;
+			sourceTree = "<group>";
+		};
+		4954A2FC29E5457A00E815C9 /* AskVolume */ = {
+			isa = PBXGroup;
+			children = (
+				4954A2F829E5440300E815C9 /* AskVolumeView.swift */,
+				4954A2FA29E5445C00E815C9 /* AskVolumeCell.swift */,
+			);
+			path = AskVolume;
 			sourceTree = "<group>";
 		};
 		49E5257429D66F26004D649C /* RightInfo */ = {
@@ -213,6 +226,7 @@
 				49E5257429D66F26004D649C /* RightInfo */,
 				4954A2EF29E51B8A00E815C9 /* MatchInfo */,
 				4954A2F729E5431500E815C9 /* BidPrice */,
+				4954A2FC29E5457A00E815C9 /* AskVolume */,
 			);
 			path = OrderTable;
 			sourceTree = "<group>";
@@ -331,10 +345,12 @@
 				49ED906D29D3E1E60003E962 /* OrderPaperView.swift in Sources */,
 				49ED907929D41CB20003E962 /* BidVolumeCell.swift in Sources */,
 				49FCAD0629D5773E0063A847 /* TitleAndValueVIew.swift in Sources */,
+				4954A2F929E5440300E815C9 /* AskVolumeView.swift in Sources */,
 				49FCACF929D4FA820063A847 /* RightInfoView.swift in Sources */,
 				49ED906229D39D530003E962 /* Extension+UIViewController.swift in Sources */,
 				49FF0FE529E00350007F62B5 /* MatchInfoData.swift in Sources */,
 				49ED906029D39AB30003E962 /* MainViewController.swift in Sources */,
+				4954A2FB29E5445C00E815C9 /* AskVolumeCell.swift in Sources */,
 				4954A2F629E541D500E815C9 /* BidPriceView.swift in Sources */,
 				49FCACFF29D5056C0063A847 /* FirstInfoData.swift in Sources */,
 				49FCACF429D4F06B0063A847 /* AskPriceCell.swift in Sources */,

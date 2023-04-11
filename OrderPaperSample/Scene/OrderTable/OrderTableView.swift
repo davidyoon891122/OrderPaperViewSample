@@ -47,7 +47,7 @@ final class OrderTableView: UIView {
     
     private lazy var bidPriceView = BidPriceView()
     
-    private lazy var askVolumnView = UIView()
+    private lazy var askVolumnView = AskVolumeView()
     
     private lazy var bottomHStackView: UIStackView = {
         let stackView = UIStackView()

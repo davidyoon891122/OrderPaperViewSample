@@ -1,14 +1,14 @@
 //
-//  BidVolumeView.swift
+//  AskVolumeView.swift
 //  OrderPaperSample
 //
-//  Created by jiwon Yoon on 2023/03/29.
+//  Created by jiwon Yoon on 2023/04/11.
 //
 
 import UIKit
 import SnapKit
 
-final class BidVolumeView: UIView {
+final class AskVolumeView: UIView {
     private lazy var collectionView: UICollectionView = {
         let layout = createLayout()
         
@@ -18,8 +18,8 @@ final class BidVolumeView: UIView {
         )
         
         collectionView.register(
-            BidVolumeCell.self,
-            forCellWithReuseIdentifier: BidVolumeCell.identifier
+            AskVolumeCell.self,
+            forCellWithReuseIdentifier: AskVolumeCell.identifier
         )
         
         collectionView.isScrollEnabled = false
@@ -40,7 +40,7 @@ final class BidVolumeView: UIView {
     }
 }
 
-private extension BidVolumeView {
+private extension AskVolumeView {
     func setupViews() {
         addSubview(collectionView)
         
@@ -63,7 +63,7 @@ private extension BidVolumeView {
     
     func configurationDataSource() {
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BidVolumeCell.identifier, for: indexPath) as? BidVolumeCell else { return UICollectionViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AskVolumeCell.identifier, for: indexPath) as? AskVolumeCell else { return UICollectionViewCell() }
             
             return cell
         })
@@ -83,10 +83,10 @@ private extension BidVolumeView {
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 
-struct BidVolumeViewPreview: PreviewProvider {
+struct AskVolumeViewPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
-            BidVolumeView()
+            AskVolumeView()
         }
         .frame(width: Constants.OrderPaper.volumeViewWidth, height: 300.0)
     }
