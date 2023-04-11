@@ -43,7 +43,7 @@ final class OrderTableView: UIView {
         return stackView
     }()
     
-    private lazy var matchStrengthView = UIView()
+    private lazy var matchStrengthView = MatchStrengthView()
     
     private lazy var bidPriceView = UIView()
     

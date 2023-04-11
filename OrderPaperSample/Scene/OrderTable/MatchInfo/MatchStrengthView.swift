@@ -13,8 +13,8 @@ enum MatchStrengthSection: CaseIterable, Hashable {
 }
 
 enum MatchInfoItem: Hashable {
-    case first
-    case second
+    case first(MatchInfoStrengthData)
+    case second(ProfitData)
 }
 
 final class MatchStrengthView: UIView {
@@ -26,12 +26,24 @@ final class MatchStrengthView: UIView {
             collectionViewLayout: layout
         )
         
+        collectionView.register(
+            MatchContainerCell.self,
+            forCellWithReuseIdentifier: MatchContainerCell.identifier
+        )
+        collectionView.register(
+            ProfitViewCell.self,
+            forCellWithReuseIdentifier: ProfitViewCell.identifier
+        )
+        
         return collectionView
     }()
+    
+    private var dataSource: UICollectionViewDiffableDataSource<MatchStrengthSection, MatchInfoItem>!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        configureDataSource()
     }
     
     required init?(coder: NSCoder) {
@@ -70,6 +82,29 @@ private extension MatchStrengthView {
         }, configuration: configure)
         
         return layout
+    }
+    
+    func configureDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<MatchStrengthSection, MatchInfoItem>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
+            switch item {
+            case .first(_):
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MatchContainerCell.identifier, for: indexPath) as? MatchContainerCell else { return UICollectionViewCell() }
+                
+                return cell
+            case .second(_):
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfitViewCell.identifier, for: indexPath) as? ProfitViewCell else { return UICollectionViewCell() }
+                return cell
+            }
+        })
+        
+        applySnapshot()
+    }
+    
+    func applySnapshot() {
+        var snapshot = NSDiffableDataSourceSnapshot<MatchStrengthSection, MatchInfoItem>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems([.first(MatchInfoStrengthData.strengthItem), .second(ProfitData.item)])
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 
