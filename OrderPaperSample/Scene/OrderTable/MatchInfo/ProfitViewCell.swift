@@ -54,7 +54,7 @@ final class ProfitViewCell: UICollectionViewCell {
     
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .secondarySystemBackground
+        view.backgroundColor = .systemBackground
         [
             cashTitleLabel,
             cashProfilView,
