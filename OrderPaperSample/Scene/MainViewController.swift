@@ -29,7 +29,7 @@ final class MainViewController: UIViewController {
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         
-        orderPaperView.backgroundColor = .red
+        orderPaperView.backgroundColor = .systemBackground
         
         [
             orderPaperView,

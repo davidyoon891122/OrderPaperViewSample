@@ -83,8 +83,8 @@ private extension RightInfoView {
         
         pageControl.snp.makeConstraints {
             $0.height.equalTo(10.0)
-            $0.width.equalTo(100)
-            $0.centerX.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
     }

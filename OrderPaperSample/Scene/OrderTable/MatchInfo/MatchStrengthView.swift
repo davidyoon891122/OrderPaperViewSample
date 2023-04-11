@@ -75,9 +75,9 @@ private extension MatchStrengthView {
         
         pageControl.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.centerX.equalToSuperview()
             $0.height.equalTo(10.0)
-            $0.width.equalTo(100.0)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
         }
         
         collectionView.snp.makeConstraints {

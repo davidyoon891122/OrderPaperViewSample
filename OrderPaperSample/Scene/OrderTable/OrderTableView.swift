@@ -53,17 +53,14 @@ final class OrderTableView: UIView {
         let stackView = UIStackView()
         stackView.distribution = .fillProportionally
         
-        matchStrengthView.backgroundColor = .red
         matchStrengthView.snp.makeConstraints {
             $0.width.equalTo(Constants.OrderPaper.volumeViewWidth)
         }
         
-        bidPriceView.backgroundColor = .orange
         bidPriceView.snp.makeConstraints {
             $0.width.equalTo(Constants.OrderPaper.priceViewWidth)
         }
         
-        askVolumnView.backgroundColor = .yellow
         askVolumnView.snp.makeConstraints {
             $0.width.equalTo(Constants.OrderPaper.volumeViewWidth)
         }
