@@ -45,7 +45,7 @@ final class OrderTableView: UIView {
     
     private lazy var matchStrengthView = MatchStrengthView()
     
-    private lazy var bidPriceView = UIView()
+    private lazy var bidPriceView = BidPriceView()
     
     private lazy var askVolumnView = UIView()
     

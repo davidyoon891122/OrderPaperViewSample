@@ -11,6 +11,7 @@
 		4954A2EE29E4EC1B00E815C9 /* MatchStrengthTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A2ED29E4EC1B00E815C9 /* MatchStrengthTitleView.swift */; };
 		4954A2F229E51BD000E815C9 /* ProfitViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A2F129E51BD000E815C9 /* ProfitViewCell.swift */; };
 		4954A2F429E537BC00E815C9 /* ProfitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A2F329E537BC00E815C9 /* ProfitData.swift */; };
+		4954A2F629E541D500E815C9 /* BidPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A2F529E541D500E815C9 /* BidPriceView.swift */; };
 		49E5257629D6C2B1004D649C /* MatchStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5257529D6C2B1004D649C /* MatchStrengthView.swift */; };
 		49E5257829D6C803004D649C /* MatchContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5257729D6C803004D649C /* MatchContainerCell.swift */; };
 		49ED904C29D39A460003E962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED904B29D39A460003E962 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		4954A2ED29E4EC1B00E815C9 /* MatchStrengthTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStrengthTitleView.swift; sourceTree = "<group>"; };
 		4954A2F129E51BD000E815C9 /* ProfitViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitViewCell.swift; sourceTree = "<group>"; };
 		4954A2F329E537BC00E815C9 /* ProfitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitData.swift; sourceTree = "<group>"; };
+		4954A2F529E541D500E815C9 /* BidPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidPriceView.swift; sourceTree = "<group>"; };
 		49E5257529D6C2B1004D649C /* MatchStrengthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStrengthView.swift; sourceTree = "<group>"; };
 		49E5257729D6C803004D649C /* MatchContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchContainerCell.swift; sourceTree = "<group>"; };
 		49ED904829D39A460003E962 /* OrderPaperSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderPaperSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,14 @@
 				4954A2ED29E4EC1B00E815C9 /* MatchStrengthTitleView.swift */,
 			);
 			path = Match;
+			sourceTree = "<group>";
+		};
+		4954A2F729E5431500E815C9 /* BidPrice */ = {
+			isa = PBXGroup;
+			children = (
+				4954A2F529E541D500E815C9 /* BidPriceView.swift */,
+			);
+			path = BidPrice;
 			sourceTree = "<group>";
 		};
 		49E5257429D66F26004D649C /* RightInfo */ = {
@@ -199,9 +209,10 @@
 			children = (
 				49ED907229D3FF2F0003E962 /* OrderTableView.swift */,
 				49FCACF029D4EFBA0063A847 /* BidVolume */,
-				49FCACF729D4F9B40063A847 /* AskVolume */,
+				49FCACF729D4F9B40063A847 /* AskPrice */,
 				49E5257429D66F26004D649C /* RightInfo */,
 				4954A2EF29E51B8A00E815C9 /* MatchInfo */,
+				4954A2F729E5431500E815C9 /* BidPrice */,
 			);
 			path = OrderTable;
 			sourceTree = "<group>";
@@ -216,14 +227,14 @@
 			path = BidVolume;
 			sourceTree = "<group>";
 		};
-		49FCACF729D4F9B40063A847 /* AskVolume */ = {
+		49FCACF729D4F9B40063A847 /* AskPrice */ = {
 			isa = PBXGroup;
 			children = (
 				49FCACF129D4EFCE0063A847 /* AskPriceView.swift */,
 				49FCACF329D4F06B0063A847 /* AskPriceCell.swift */,
 				49FCACF529D4F66F0063A847 /* PriceData.swift */,
 			);
-			path = AskVolume;
+			path = AskPrice;
 			sourceTree = "<group>";
 		};
 		49FCAD0429D53C5A0063A847 /* CustomView */ = {
@@ -324,6 +335,7 @@
 				49ED906229D39D530003E962 /* Extension+UIViewController.swift in Sources */,
 				49FF0FE529E00350007F62B5 /* MatchInfoData.swift in Sources */,
 				49ED906029D39AB30003E962 /* MainViewController.swift in Sources */,
+				4954A2F629E541D500E815C9 /* BidPriceView.swift in Sources */,
 				49FCACFF29D5056C0063A847 /* FirstInfoData.swift in Sources */,
 				49FCACF429D4F06B0063A847 /* AskPriceCell.swift in Sources */,
 				49FCACF629D4F66F0063A847 /* PriceData.swift in Sources */,
