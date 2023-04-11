@@ -30,7 +30,7 @@ final class MatchStrengthTitleView: UIView {
     
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .secondarySystemBackground
+        view.backgroundColor = .systemBackground
        
         [
             titleLabel,
@@ -41,11 +41,11 @@ final class MatchStrengthTitleView: UIView {
             }
         
         
-        let offset: CGFloat = 4.0
+        let offset: CGFloat = 8.0
         titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(offset)
+            $0.top.equalToSuperview().offset(offset / 2)
             $0.leading.equalToSuperview().offset(offset)
-            $0.bottom.equalToSuperview().offset(-offset)
+            $0.bottom.equalToSuperview().offset(-offset / 2)
         }
         
         contentLabel.snp.makeConstraints {

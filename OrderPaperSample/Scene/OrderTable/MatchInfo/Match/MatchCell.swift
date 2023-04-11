@@ -31,7 +31,7 @@ final class MatchCell: UICollectionViewCell {
     
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .secondarySystemBackground
+        view.backgroundColor = .systemBackground
         
         [
             priceLabel,
@@ -41,11 +41,11 @@ final class MatchCell: UICollectionViewCell {
                 view.addSubview($0)
             }
         
-        let offset: CGFloat = 2.0
+        let offset: CGFloat = 8.0
         priceLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(offset)
+            $0.top.equalToSuperview().offset(offset / 4)
             $0.leading.equalToSuperview().offset(offset)
-            $0.bottom.equalToSuperview().offset(-offset)
+            $0.bottom.equalToSuperview().offset(-offset / 4)
         }
         
         volumnLabel.snp.makeConstraints {

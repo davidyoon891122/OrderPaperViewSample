@@ -11,11 +11,11 @@ import SnapKit
 final class FirstInfoCell: UICollectionViewCell {
     static let identifier = "FirstInfoCell"
     
-    private lazy var fiftyTwoWeekHighView = TitleAndValueView(titleValue: "52 Week\nHigh", contentValue: "19.6800", topOffset: 4)
+    private lazy var fiftyTwoWeekHighView = TitleAndValueView(titleValue: "52 Week\nHigh", contentValue: "19.6800", topOffset: 4, bottomOffset: 4)
     
-    private lazy var fiftyTwoWeekLowView = TitleAndValueView(titleValue: "52 Week\nLow", contentValue: "6.0945", topOffset: 4)
+    private lazy var fiftyTwoWeekLowView = TitleAndValueView(titleValue: "52 Week\nLow", contentValue: "6.0945", topOffset: 4, bottomOffset: 4)
     
-    private lazy var priceQuotationView = TitleAndValueView(titleValue: "Price\nQuotation", contentValue: "0.0100", topOffset: 4)
+    private lazy var priceQuotationView = TitleAndValueView(titleValue: "Price\nQuotation", contentValue: "0.0100", topOffset: 4, bottomOffset: 4)
     
     private let separatorView = SeparatorView(
         size: 0.5,
