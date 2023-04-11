@@ -13,7 +13,7 @@ enum MatchStrengthSection: CaseIterable, Hashable {
 }
 
 enum MatchInfoItem: Hashable {
-    case first(MatchInfoStrengthData)
+    case first(MatchInfo)
     case second(ProfitData)
 }
 
@@ -128,7 +128,7 @@ private extension MatchStrengthView {
     func applySnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<MatchStrengthSection, MatchInfoItem>()
         snapshot.appendSections([.main])
-        snapshot.appendItems([.first(MatchInfoStrengthData.strengthItem), .second(ProfitData.item)])
+        snapshot.appendItems([.first(MatchInfo.item), .second(ProfitData.item)])
         dataSource.apply(snapshot, animatingDifferences: true)
     }
 }

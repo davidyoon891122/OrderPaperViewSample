@@ -16,6 +16,11 @@ struct MatchData: Hashable {
     var volumQuanti: Int
 }
 
+struct MatchInfo: Hashable {
+    let strengthData: MatchInfoStrengthData
+    let matchData: [MatchData]
+}
+
 
 extension MatchInfoStrengthData {
     static let strengthItem = MatchInfoStrengthData(matchStrength: 130.50)
@@ -41,4 +46,7 @@ extension MatchData {
     ]
 }
 
+extension MatchInfo {
+    static let item = MatchInfo(strengthData: MatchInfoStrengthData.strengthItem, matchData: MatchData.matchItem)
+}
 
