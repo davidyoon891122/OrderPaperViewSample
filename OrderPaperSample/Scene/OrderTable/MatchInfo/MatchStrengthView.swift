@@ -18,6 +18,18 @@ enum MatchInfoItem: Hashable {
 }
 
 final class MatchStrengthView: UIView {
+    private lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.currentPage = 0
+        pageControl.pageIndicatorTintColor = .lightGray
+        pageControl.currentPageIndicatorTintColor = .label
+        pageControl.numberOfPages = 2
+        
+        pageControl.isUserInteractionEnabled = false
+        
+        return pageControl
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let layout = createLayout()
         
@@ -54,22 +66,30 @@ final class MatchStrengthView: UIView {
 private extension MatchStrengthView {
     func setupViews() {
         [
+            pageControl,
             collectionView
         ]
             .forEach {
                 addSubview($0)
             }
         
+        pageControl.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(10.0)
+            $0.width.equalTo(100.0)
+        }
+        
         collectionView.snp.makeConstraints {
-            
-            $0.edges.equalToSuperview()
+
+            $0.top.equalTo(pageControl.snp.bottom)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
     }
     
     func createLayout() -> UICollectionViewCompositionalLayout {
-        let configure = UICollectionViewCompositionalLayoutConfiguration()
-
-        
         let layout = UICollectionViewCompositionalLayout(sectionProvider: { sectionIndex, layoutEnvironment in
             let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(Constants.OrderPaper.volumeViewWidth), heightDimension: .fractionalHeight(1)), subitems: [item])
@@ -77,9 +97,14 @@ private extension MatchStrengthView {
             
             section.orthogonalScrollingBehavior = .paging
             
+            section.visibleItemsInvalidationHandler = { item, offset, env in
+                let index = Int((offset.x / env.container.contentSize.width).rounded(.up))
+                self.pageControl.currentPage = index
+            }
+            
             return section
             
-        }, configuration: configure)
+        })
         
         return layout
     }

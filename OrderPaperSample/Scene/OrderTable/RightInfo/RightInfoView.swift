@@ -90,9 +90,6 @@ private extension RightInfoView {
     }
     
     func createLayout() -> UICollectionViewCompositionalLayout {
-        let configure = UICollectionViewCompositionalLayoutConfiguration()
-
-        
         let layout = UICollectionViewCompositionalLayout(sectionProvider: { sectionIndex, layoutEnvironment in
             let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(Constants.OrderPaper.volumeViewWidth), heightDimension: .fractionalHeight(1)), subitems: [item])
@@ -108,7 +105,7 @@ private extension RightInfoView {
             
             return section
             
-        }, configuration: configure)
+        })
         
         return layout
     }
