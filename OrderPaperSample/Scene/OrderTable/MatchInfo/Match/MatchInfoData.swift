@@ -12,11 +12,11 @@ struct MatchInfoStrengthData: Hashable {
 }
 
 struct MatchData: Hashable {
-    var priceValeu: Double
+    var priceValue: Double
     var volumQuanti: Int
 }
 
-struct MatchInfo: Hashable {
+struct MatchInfoData: Hashable {
     let strengthData: MatchInfoStrengthData
     let matchData: [MatchData]
 }
@@ -28,25 +28,25 @@ extension MatchInfoStrengthData {
 
 extension MatchData {
     static let matchItem = [
-            MatchData(priceValeu: 9.4500, volumQuanti: 320),
-            MatchData(priceValeu: 9.4000, volumQuanti: 320),
-            MatchData(priceValeu: 9.3500, volumQuanti: 320),
-            MatchData(priceValeu: 9.3000, volumQuanti: 320),
-            MatchData(priceValeu: 9.2500, volumQuanti: 320),
-            MatchData(priceValeu: 9.2000, volumQuanti: 320),
-            MatchData(priceValeu: 9.1500, volumQuanti: 320),
-            MatchData(priceValeu: 9.1000, volumQuanti: 320),
-            MatchData(priceValeu: 9.0500, volumQuanti: 320),
-            MatchData(priceValeu: 9.0000, volumQuanti: 320),
-            MatchData(priceValeu: 8.9500, volumQuanti: 320),
-            MatchData(priceValeu: 8.9000, volumQuanti: 320),
-            MatchData(priceValeu: 8.8500, volumQuanti: 320),
-            MatchData(priceValeu: 8.8000, volumQuanti: 320),
-            MatchData(priceValeu: 8.7500, volumQuanti: 320)
+            MatchData(priceValue: 9.4500, volumQuanti: 320),
+            MatchData(priceValue: 9.4000, volumQuanti: 320),
+            MatchData(priceValue: 9.3500, volumQuanti: 320),
+            MatchData(priceValue: 9.3000, volumQuanti: 320),
+            MatchData(priceValue: 9.2500, volumQuanti: 320),
+            MatchData(priceValue: 9.2000, volumQuanti: 320),
+            MatchData(priceValue: 9.1500, volumQuanti: 320),
+            MatchData(priceValue: 9.1000, volumQuanti: 320),
+            MatchData(priceValue: 9.0500, volumQuanti: 320),
+            MatchData(priceValue: 9.0000, volumQuanti: 320),
+            MatchData(priceValue: 8.9500, volumQuanti: 320),
+            MatchData(priceValue: 8.9000, volumQuanti: 320),
+            MatchData(priceValue: 8.8500, volumQuanti: 320),
+            MatchData(priceValue: 8.8000, volumQuanti: 320),
+            MatchData(priceValue: 8.7500, volumQuanti: 320)
     ]
 }
 
-extension MatchInfo {
-    static let item = MatchInfo(strengthData: MatchInfoStrengthData.strengthItem, matchData: MatchData.matchItem)
+extension MatchInfoData {
+    static let item = MatchInfoData(strengthData: MatchInfoStrengthData.strengthItem, matchData: MatchData.matchItem)
 }
 

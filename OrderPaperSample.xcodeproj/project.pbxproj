@@ -32,6 +32,8 @@
 		49ED907729D414680003E962 /* BidVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED907629D414680003E962 /* BidVolumeView.swift */; };
 		49ED907929D41CB20003E962 /* BidVolumeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED907829D41CB20003E962 /* BidVolumeCell.swift */; };
 		49ED907B29D4235F0003E962 /* VolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED907A29D4235F0003E962 /* VolumeData.swift */; };
+		49FC666229E62F15001056EF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC666129E62F15001056EF /* MainViewModel.swift */; };
+		49FC666429E63017001056EF /* StockInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC666329E63017001056EF /* StockInfoData.swift */; };
 		49FCACF229D4EFCE0063A847 /* AskPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCACF129D4EFCE0063A847 /* AskPriceView.swift */; };
 		49FCACF429D4F06B0063A847 /* AskPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCACF329D4F06B0063A847 /* AskPriceCell.swift */; };
 		49FCACF629D4F66F0063A847 /* PriceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FCACF529D4F66F0063A847 /* PriceData.swift */; };
@@ -72,6 +74,8 @@
 		49ED907629D414680003E962 /* BidVolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidVolumeView.swift; sourceTree = "<group>"; };
 		49ED907829D41CB20003E962 /* BidVolumeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidVolumeCell.swift; sourceTree = "<group>"; };
 		49ED907A29D4235F0003E962 /* VolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeData.swift; sourceTree = "<group>"; };
+		49FC666129E62F15001056EF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		49FC666329E63017001056EF /* StockInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInfoData.swift; sourceTree = "<group>"; };
 		49FCACF129D4EFCE0063A847 /* AskPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskPriceView.swift; sourceTree = "<group>"; };
 		49FCACF329D4F06B0063A847 /* AskPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskPriceCell.swift; sourceTree = "<group>"; };
 		49FCACF529D4F66F0063A847 /* PriceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceData.swift; sourceTree = "<group>"; };
@@ -171,7 +175,6 @@
 				49ED906629D3ABA90003E962 /* Resource */,
 				49ED906729D3ABCC0003E962 /* Scene */,
 				49ED906829D3ABD20003E962 /* Library */,
-				49ED907429D4049C0003E962 /* Constants.swift */,
 			);
 			path = OrderPaperSample;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				49ED907029D3F53A0003E962 /* TopInfoView.swift */,
 				49FCAD0429D53C5A0063A847 /* CustomView */,
 				49FCACEF29D4EE090063A847 /* OrderTable */,
+				49FC666329E63017001056EF /* StockInfoData.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -210,9 +214,11 @@
 		49ED906829D3ABD20003E962 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				49FC666129E62F15001056EF /* MainViewModel.swift */,
 				49ED906129D39D530003E962 /* Extension+UIViewController.swift */,
 				49ED906329D39E1A0003E962 /* DevideType.swift */,
 				49ED906E29D3E2CD0003E962 /* Extension+UIView.swift */,
+				49ED907429D4049C0003E962 /* Constants.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4954A2EC29E4CF1900E815C9 /* MatchCell.swift in Sources */,
+				49FC666429E63017001056EF /* StockInfoData.swift in Sources */,
 				49FCAD0329D53C550063A847 /* SeparatorView.swift in Sources */,
 				4954A2EE29E4EC1B00E815C9 /* MatchStrengthTitleView.swift in Sources */,
 				49FCACF229D4EFCE0063A847 /* AskPriceView.swift in Sources */,
@@ -361,6 +368,7 @@
 				49ED907729D414680003E962 /* BidVolumeView.swift in Sources */,
 				49FCACFB29D502230063A847 /* FirstInfoCell.swift in Sources */,
 				49E5257629D6C2B1004D649C /* MatchStrengthView.swift in Sources */,
+				49FC666229E62F15001056EF /* MainViewModel.swift in Sources */,
 				4954A2F229E51BD000E815C9 /* ProfitViewCell.swift in Sources */,
 				4954A2F429E537BC00E815C9 /* ProfitData.swift in Sources */,
 				49ED906429D39E1A0003E962 /* DevideType.swift in Sources */,

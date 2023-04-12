@@ -77,8 +77,6 @@ extension MainViewController {
         stackView.snp.makeConstraints{
             $0.edges.equalToSuperview()
         }
-        
-        
     }
 }
 
