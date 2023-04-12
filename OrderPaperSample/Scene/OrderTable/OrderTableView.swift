@@ -101,13 +101,13 @@ private extension OrderTableView {
         topHStackView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(300.0)
+            $0.height.equalTo(Constants.OrderPaper.orderPaperHeight)
         }
         
         bottomHStackView.snp.makeConstraints {
             $0.top.equalTo(topHStackView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(300.0)
+            $0.height.equalTo(Constants.OrderPaper.orderPaperHeight)
             $0.bottom.equalToSuperview()
         }
     }
@@ -125,7 +125,7 @@ struct OrderTableViewPreview: PreviewProvider {
         UIView.UIViewPreview {
             OrderTableView()
         }
-        .frame(width: UIScreen.main.bounds.width, height: 600.0)
+        .frame(width: UIScreen.main.bounds.width, height: Constants.OrderPaper.orderPaperHeight * 2)
     }
 }
 

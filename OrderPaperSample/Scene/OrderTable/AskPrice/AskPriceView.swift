@@ -51,8 +51,8 @@ private extension AskPriceView {
     
     func createLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout(sectionProvider: { sectionIndex, layoutEnvironment in
-            let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30)))
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(Constants.OrderPaper.priceViewWidth), heightDimension: .absolute(300)), subitems: [item])
+            let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(Constants.OrderPaper.orderPaperHeight / 10)))
+            let group = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(Constants.OrderPaper.priceViewWidth), heightDimension: .absolute(Constants.OrderPaper.orderPaperHeight)), subitems: [item])
             let section = NSCollectionLayoutSection(group: group)
             
             return section
@@ -87,7 +87,7 @@ struct AskPriceViewPreview: PreviewProvider {
         UIView.UIViewPreview {
             AskPriceView()
         }
-        .frame(width: Constants.OrderPaper.priceViewWidth, height: 300.0)
+        .frame(width: Constants.OrderPaper.priceViewWidth, height: Constants.OrderPaper.orderPaperHeight)
     }
 }
 
