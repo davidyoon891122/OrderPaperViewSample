@@ -51,8 +51,8 @@ final class OrderPaperView: UIView {
     }
     
     func setStockInfoData(stockInfo: StockInfoData) {
-        print(stockInfo)
         topInfoView.setInfoData(stockInfo: stockInfo)
+        orderTableView.setInfoData(stockInfo: stockInfo)
     }
 }
 

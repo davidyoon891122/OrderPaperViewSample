@@ -29,6 +29,8 @@ final class BidVolumeView: UIView {
     
     private var dataSource: UICollectionViewDiffableDataSource<Int, VolumeData>!
     
+    private var volumeData: [VolumeData]?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -37,6 +39,11 @@ final class BidVolumeView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setInfoData(stockInfo: StockInfoData) {
+        self.volumeData = stockInfo.bidVolume
+        applySnapshot()
     }
 }
 
@@ -64,6 +71,7 @@ private extension BidVolumeView {
     func configurationDataSource() {
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BidVolumeCell.identifier, for: indexPath) as? BidVolumeCell else { return UICollectionViewCell() }
+            cell.setupCell(volume: item)
             
             return cell
         })
@@ -74,7 +82,7 @@ private extension BidVolumeView {
     func applySnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<Int, VolumeData>()
         snapshot.appendSections([0])
-        snapshot.appendItems(VolumeData.allItem)
+        snapshot.appendItems(volumeData ?? [])
         dataSource.apply(snapshot, animatingDifferences: true)
     }
 }

@@ -51,6 +51,10 @@ final class BidVolumeCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setupCell(volume: VolumeData) {
+        volumeLabel.text = "\(volume.volume)"
+    }
 }
 
 private extension BidVolumeCell {
