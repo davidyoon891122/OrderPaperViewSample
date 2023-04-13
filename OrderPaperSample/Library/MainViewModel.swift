@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol MainViewModelInput {
     func requestStockInfo(code: String)
 }
 
 protocol MainViewModelOutput {
+    var stockInfoPublishSubject: PublishSubject<StockInfoData> { get }
 }
 
 protocol MainViewModelType {
@@ -23,12 +25,10 @@ class MainViewModel: MainViewModelType, MainViewModelInput, MainViewModelOutput 
     var inputs: MainViewModelInput { self }
     var outputs: MainViewModelOutput { self }
     
+    var stockInfoPublishSubject: PublishSubject<StockInfoData> = .init()
+    
     func requestStockInfo(code: String) {
         let stockInfo = StockInfoData.item
-        
-        
+        stockInfoPublishSubject.onNext(stockInfo)
     }
-    
-    
-    
 }

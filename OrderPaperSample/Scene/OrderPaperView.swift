@@ -49,6 +49,11 @@ final class OrderPaperView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setStockInfoData(stockInfo: StockInfoData) {
+        print(stockInfo)
+        topInfoView.setInfoData(stockInfo: stockInfo)
+    }
 }
 
 extension OrderPaperView {

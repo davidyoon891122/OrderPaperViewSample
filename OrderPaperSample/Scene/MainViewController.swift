@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 final class MainViewController: UIViewController {
     private let scrollView = UIScrollView()
@@ -47,14 +48,24 @@ final class MainViewController: UIViewController {
         return stackView
     }()
     
+    private var viewModel: MainViewModelType = MainViewModel()
+    
+    private var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigation()
         setupViews()
+        bindViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.inputs.requestStockInfo(code: "Apple")
     }
 }
 
-extension MainViewController {
+private extension MainViewController {
     func configureNavigation() {
         navigationItem.title = "MainOrderPaper"
     }
@@ -77,6 +88,15 @@ extension MainViewController {
         stackView.snp.makeConstraints{
             $0.edges.equalToSuperview()
         }
+    }
+    
+    func bindViewModel() {
+        viewModel.outputs.stockInfoPublishSubject
+            .subscribe(onNext: { [weak self] stockInfo in
+                guard let self = self else { return }
+                self.orderPaperView.setStockInfoData(stockInfo: stockInfo)
+            })
+            .disposed(by: disposeBag)
     }
 }
 

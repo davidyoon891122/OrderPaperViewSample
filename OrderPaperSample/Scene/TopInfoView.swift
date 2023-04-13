@@ -18,7 +18,7 @@ final class TopInfoView: UIView {
         return label
     }()
     
-    private lazy var currentPricelabel: UILabel = {
+    private lazy var currentPriceLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 22.0, weight: .medium)
         label.textColor = .red
@@ -70,7 +70,7 @@ final class TopInfoView: UIView {
         view.backgroundColor = .systemBackground
         [
             nameLabel,
-            currentPricelabel,
+            currentPriceLabel,
             wonPriceLabel,
             marketLabel,
             valueChangeLabel,
@@ -84,24 +84,22 @@ final class TopInfoView: UIView {
         nameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(offset)
             $0.leading.equalToSuperview().offset(offset)
-//            $0.trailing.equalToSuperview().offset(-offset)
         }
         
-        currentPricelabel.snp.makeConstraints {
+        currentPriceLabel.snp.makeConstraints {
             $0.top.equalTo(nameLabel.snp.bottom).offset(offset)
             $0.leading.equalTo(nameLabel)
         }
         
-        currentPricelabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        currentPriceLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         
         wonPriceLabel.snp.makeConstraints {
-            $0.centerY.equalTo(currentPricelabel)
-            $0.leading.equalTo(currentPricelabel.snp.trailing).offset(offset)
-//            $0.trailing.equalToSuperview().offset(-offset)
+            $0.centerY.equalTo(currentPriceLabel)
+            $0.leading.equalTo(currentPriceLabel.snp.trailing).offset(offset)
         }
         
         marketLabel.snp.makeConstraints {
-            $0.top.equalTo(currentPricelabel.snp.bottom).offset(offset)
+            $0.top.equalTo(currentPriceLabel.snp.bottom).offset(offset)
             $0.leading.equalToSuperview().offset(offset)
         }
         
@@ -119,7 +117,6 @@ final class TopInfoView: UIView {
         percentChangeLabel.snp.makeConstraints {
             $0.centerY.equalTo(valueChangeLabel)
             $0.leading.equalTo(valueChangeLabel.snp.trailing).offset(offset)
-//            $0.trailing.equalToSuperview().offset(-offset)
         }
         
         
@@ -133,6 +130,15 @@ final class TopInfoView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setInfoData(stockInfo: StockInfoData) {
+        nameLabel.text = stockInfo.name
+        currentPriceLabel.text = String(format: "%.4f %", stockInfo.currentPrice)
+        wonPriceLabel.text = "\(stockInfo.wonPrice)"
+        marketLabel.text = stockInfo.marketType
+        valueChangeLabel.text = String(format: "%.4f %", stockInfo.valueChange)
+        percentChangeLabel.text = String(format: "%.2f %", stockInfo.percentChange)
     }
 }
 
