@@ -99,6 +99,15 @@ final class SecondInfoCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setInfoData(stockInfo: StockInfoData) {
+        if stockInfo.seocndInfoData.loanPosibility {
+            loanPossibleView.setData(value: "Poss")
+        } else {
+            loanPossibleView.setData(value: "Impos")
+        }
+        
+    }
 }
 
 private extension SecondInfoCell {

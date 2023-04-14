@@ -65,8 +65,11 @@ extension StockInfoData {
             fiftyTwoWeekLow: 6.0945,
             priceQuotation: 0.0100,
             open: 9.1300,
+            openPercent: 0.68,
             high: 9.1300,
-            low: 9.0800
+            highPercent: 1.13,
+            low: 9.0800,
+            lowPercent: 0.45
         ),
         seocndInfoData: SecondInfoData(
             loanPosibility: false,

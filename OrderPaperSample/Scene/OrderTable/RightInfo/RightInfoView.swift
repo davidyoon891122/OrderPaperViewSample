@@ -53,6 +53,9 @@ final class RightInfoView: UIView {
     
     private var dataSource: UICollectionViewDiffableDataSource<RightInfoSection, RightInfoItem>!
     
+    private var firstInfoData: FirstInfoData?
+    private var secondInfoData: SecondInfoData?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -61,6 +64,12 @@ final class RightInfoView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setInfoData(stockInfo: StockInfoData) {
+        self.firstInfoData = stockInfo.firstInfoData
+        self.secondInfoData = stockInfo.seocndInfoData
+        applySnapshot()
     }
 }
 
@@ -115,8 +124,10 @@ private extension RightInfoView {
             
             switch item {
                 
-            case .first(_):
+            case .first(let firstItem):
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FirstInfoCell.identifier, for: indexPath) as? FirstInfoCell else { return UICollectionViewCell() }
+                cell.setupCell(firstInfo: firstItem
+                )
                 return cell
             case .second(_):
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SecondInfoCell.identifier, for: indexPath) as? SecondInfoCell else { return UICollectionViewCell() }
@@ -130,14 +141,14 @@ private extension RightInfoView {
     func applySnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<RightInfoSection, RightInfoItem>()
         snapshot.appendSections([.main])
-        
-        snapshot.appendItems([.first(FirstInfoData.item), .second(SecondInfoData.item)])
+        guard let firstInfoData = self.firstInfoData,
+              let secondInfoData = self.secondInfoData else { return }
+                
+        snapshot.appendItems([.first(firstInfoData), .second(secondInfoData)])
         
         dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
-
-
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI

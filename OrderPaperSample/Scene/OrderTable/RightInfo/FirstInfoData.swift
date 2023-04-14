@@ -12,8 +12,11 @@ struct FirstInfoData: Hashable {
     var fiftyTwoWeekLow: Double
     var priceQuotation: Double
     var open: Double
+    var openPercent: Double
     var high: Double
+    var highPercent: Double
     var low: Double
+    var lowPercent: Double
 }
 
 extension FirstInfoData {
@@ -23,8 +26,11 @@ extension FirstInfoData {
             fiftyTwoWeekLow: 6.0945,
             priceQuotation: 0.0100,
             open: 8.3900,
+            openPercent: 0.68,
             high: 8.4600,
-            low: 8.3600
+            highPercent: 0,
+            low: 8.3600,
+            lowPercent: 0.32
         )
     
 }

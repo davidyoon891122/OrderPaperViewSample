@@ -81,6 +81,10 @@ final class TitleAndValueView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setData(value: String) {
+        contentLabel.text = value
+    }
 }
 
 private extension TitleAndValueView {

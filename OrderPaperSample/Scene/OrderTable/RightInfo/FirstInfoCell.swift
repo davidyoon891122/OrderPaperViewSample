@@ -226,6 +226,18 @@ final class FirstInfoCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setupCell(firstInfo: FirstInfoData) {
+        fiftyTwoWeekHighView.setData(value: firstInfo.fiftyTwoWeekHigh.fourPointStringNumber)
+        fiftyTwoWeekLowView.setData(value: firstInfo.fiftyTwoWeekLow.fourPointStringNumber)
+        priceQuotationView.setData(value: firstInfo.priceQuotation.fourPointStringNumber)
+        openValueLabel.text = firstInfo.open.fourPointStringNumber
+        openPercentLabel.text = firstInfo.openPercent.twoPointStringNumber
+        highValueLabel.text = firstInfo.high.fourPointStringNumber
+        highPercentLabel.text = firstInfo.highPercent.twoPointStringNumber
+        lowValueLabel.text = firstInfo.low.fourPointStringNumber
+        lowPercentLabel.text = firstInfo.lowPercent.twoPointStringNumber
+    }
 }
 
 private extension FirstInfoCell {
