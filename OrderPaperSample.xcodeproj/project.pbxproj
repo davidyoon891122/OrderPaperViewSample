@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		494D8C5429E8CBC700268537 /* Extension+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D8C5329E8CBC700268537 /* Extension+Double.swift */; };
 		4954A2EC29E4CF1900E815C9 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A2EB29E4CF1900E815C9 /* MatchCell.swift */; };
 		4954A2EE29E4EC1B00E815C9 /* MatchStrengthTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A2ED29E4EC1B00E815C9 /* MatchStrengthTitleView.swift */; };
 		4954A2F229E51BD000E815C9 /* ProfitViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954A2F129E51BD000E815C9 /* ProfitViewCell.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		494D8C5329E8CBC700268537 /* Extension+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Double.swift"; sourceTree = "<group>"; };
 		4954A2EB29E4CF1900E815C9 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		4954A2ED29E4EC1B00E815C9 /* MatchStrengthTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStrengthTitleView.swift; sourceTree = "<group>"; };
 		4954A2F129E51BD000E815C9 /* ProfitViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitViewCell.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				49ED906329D39E1A0003E962 /* DevideType.swift */,
 				49ED906E29D3E2CD0003E962 /* Extension+UIView.swift */,
 				49ED907429D4049C0003E962 /* Constants.swift */,
+				494D8C5329E8CBC700268537 /* Extension+Double.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494D8C5429E8CBC700268537 /* Extension+Double.swift in Sources */,
 				4954A2EC29E4CF1900E815C9 /* MatchCell.swift in Sources */,
 				49FC666429E63017001056EF /* StockInfoData.swift in Sources */,
 				49FCAD0329D53C550063A847 /* SeparatorView.swift in Sources */,

@@ -89,6 +89,7 @@ final class OrderTableView: UIView {
     
     func setInfoData(stockInfo: StockInfoData) {
         bidVolumeView.setInfoData(stockInfo: stockInfo)
+        askPriceView.setInfoData(stockInfo: stockInfo)
     }
 }
 

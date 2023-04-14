@@ -26,6 +26,7 @@ final class AskPriceCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: 13, weight: .light)
         label.textColor = .label
         label.text = "-0.24%"
+        label.textAlignment = .center
         
         return label
     }()
@@ -54,6 +55,7 @@ final class AskPriceCell: UICollectionViewCell {
             $0.leading.equalTo(priceLabel.snp.trailing).offset(offset)
             $0.centerY.equalTo(priceLabel)
             $0.trailing.equalToSuperview().offset(-offset)
+            $0.width.greaterThanOrEqualTo(35)
         }
         
         changePercentLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
@@ -68,6 +70,11 @@ final class AskPriceCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupCell(priceData: PriceData) {
+        self.priceLabel.text = priceData.price.fourPointStringNumber
+        self.changePercentLabel.text = priceData.change.twoPointStringNumberWithSign
     }
 }
 
