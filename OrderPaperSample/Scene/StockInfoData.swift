@@ -19,7 +19,7 @@ struct StockInfoData {
     var bidVolume: [VolumeData]
     var askPrice: [PriceData]
     var firstInfoData: FirstInfoData
-    var seocndInfoData: SecondInfoData
+    var secondInfoData: SecondInfoData
     var matchInfoData: MatchInfoData
     var profitData: ProfitData
     var bidPrice: [PriceData]
@@ -71,7 +71,7 @@ extension StockInfoData {
             low: 9.0800,
             lowPercent: 0.45
         ),
-        seocndInfoData: SecondInfoData(
+        secondInfoData: SecondInfoData(
             loanPosibility: false,
             loanRage: 0,
             per: 0.00,

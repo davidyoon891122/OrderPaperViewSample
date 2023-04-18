@@ -100,13 +100,20 @@ final class SecondInfoCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setInfoData(stockInfo: StockInfoData) {
-        if stockInfo.seocndInfoData.loanPosibility {
+    func setInfoData(stockInfo: SecondInfoData) {
+        if stockInfo.loanPosibility {
             loanPossibleView.setData(value: "Poss")
         } else {
             loanPossibleView.setData(value: "Impos")
         }
         
+        loanPercentView.setData(value: stockInfo.loanRage.twoPointStringNumber + "%")
+        perView.setData(value: "\(stockInfo.per)")
+        pbrView.setData(value: "\(stockInfo.pbr)")
+        epsView.setData(value: "\(stockInfo.eps)")
+        totalIssuedStockView.setData(value: "\(stockInfo.totalIssuedStock)")
+        marketCapView.setData(value: "\(stockInfo.marketCap)")
+        typeView.setData(value: stockInfo.type)
     }
 }
 

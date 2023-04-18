@@ -68,7 +68,7 @@ final class RightInfoView: UIView {
     
     func setInfoData(stockInfo: StockInfoData) {
         self.firstInfoData = stockInfo.firstInfoData
-        self.secondInfoData = stockInfo.seocndInfoData
+        self.secondInfoData = stockInfo.secondInfoData
         applySnapshot()
     }
 }
@@ -126,11 +126,12 @@ private extension RightInfoView {
                 
             case .first(let firstItem):
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FirstInfoCell.identifier, for: indexPath) as? FirstInfoCell else { return UICollectionViewCell() }
-                cell.setupCell(firstInfo: firstItem
-                )
+                cell.setupCell(firstInfo: firstItem)
                 return cell
-            case .second(_):
+            case .second(let secondItem):
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SecondInfoCell.identifier, for: indexPath) as? SecondInfoCell else { return UICollectionViewCell() }
+                
+                cell.setInfoData(stockInfo: secondItem)
                 return cell
             }
             
