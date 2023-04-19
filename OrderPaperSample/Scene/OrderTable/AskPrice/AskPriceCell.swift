@@ -74,7 +74,7 @@ final class AskPriceCell: UICollectionViewCell {
     
     func setupCell(priceData: PriceData) {
         self.priceLabel.text = priceData.price.fourPointStringNumber
-        self.changePercentLabel.text = priceData.change.twoPointStringNumberWithSign
+        self.changePercentLabel.text = priceData.change.twoPointStringNumber
     }
 }
 

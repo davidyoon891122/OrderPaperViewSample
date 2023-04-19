@@ -29,6 +29,8 @@ final class BidPriceView: UIView {
     
     private var dataSource: UICollectionViewDiffableDataSource<Int, PriceData>!
     
+    private var priceData: [PriceData]?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -37,6 +39,11 @@ final class BidPriceView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setDataInfo(stockInfo: StockInfoData) {
+        priceData = stockInfo.bidPrice
+        applySnapshot()
     }
 }
 
@@ -65,15 +72,18 @@ private extension BidPriceView {
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AskPriceCell.identifier, for: indexPath) as? AskPriceCell else { return UICollectionViewCell() }
             
+            cell.setupCell(priceData: item)
+            
             return cell
         })
         applySnapshot()
     }
     
     func applySnapshot() {
+        guard let priceData = self.priceData else { return }
         var snapshot = NSDiffableDataSourceSnapshot<Int, PriceData>()
         snapshot.appendSections([0])
-        snapshot.appendItems(PriceData.allItem)
+        snapshot.appendItems(priceData)
         
         dataSource.apply(snapshot, animatingDifferences: true)
     }
