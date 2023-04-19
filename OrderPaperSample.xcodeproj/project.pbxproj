@@ -116,6 +116,14 @@
 			path = Profit;
 			sourceTree = "<group>";
 		};
+		493808AC29EF76E80082CDDC /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				49FC666329E63017001056EF /* StockInfoData.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
 		4954A2EF29E51B8A00E815C9 /* MatchInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,7 +228,7 @@
 				49ED907029D3F53A0003E962 /* TopInfoView.swift */,
 				49FCAD0429D53C5A0063A847 /* CustomView */,
 				49FCACEF29D4EE090063A847 /* OrderTable */,
-				49FC666329E63017001056EF /* StockInfoData.swift */,
+				493808AC29EF76E80082CDDC /* MockData */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
