@@ -12,6 +12,7 @@ struct MatchInfoStrengthData: Hashable {
 }
 
 struct MatchData: Hashable {
+    var uuid = UUID()
     var priceValue: Double
     var volumQuanti: Int
 }

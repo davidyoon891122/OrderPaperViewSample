@@ -52,6 +52,9 @@ final class MatchStrengthView: UIView {
     
     private var dataSource: UICollectionViewDiffableDataSource<MatchStrengthSection, MatchInfoItem>!
     
+    private var matchInfoData: MatchInfoData?
+    private var profitInfoData: ProfitData?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -60,6 +63,13 @@ final class MatchStrengthView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setDataInfo(stockInfo: StockInfoData) {
+        matchInfoData = stockInfo.matchInfoData
+        profitInfoData = stockInfo.profitData
+        
+        applySnapshot()
     }
 }
 
@@ -112,12 +122,17 @@ private extension MatchStrengthView {
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<MatchStrengthSection, MatchInfoItem>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             switch item {
-            case .first(_):
+            case .first(let matchInfoData):
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MatchContainerCell.identifier, for: indexPath) as? MatchContainerCell else { return UICollectionViewCell() }
                 
+                cell.setInfoData(matchInfoData: matchInfoData)
+                
                 return cell
-            case .second(_):
+            case .second(let profitInfoData):
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfitViewCell.identifier, for: indexPath) as? ProfitViewCell else { return UICollectionViewCell() }
+                
+                cell.setupCell(profitData: profitInfoData)
+                
                 return cell
             }
         })
@@ -126,9 +141,14 @@ private extension MatchStrengthView {
     }
     
     func applySnapshot() {
+        guard let matchInfoData = self.matchInfoData,
+              let profitInfoData = self.profitInfoData else {
+            return
+        }
+        
         var snapshot = NSDiffableDataSourceSnapshot<MatchStrengthSection, MatchInfoItem>()
         snapshot.appendSections([.main])
-        snapshot.appendItems([.first(MatchInfoData.item), .second(ProfitData.item)])
+        snapshot.appendItems([.first(matchInfoData), .second(profitInfoData)])
         dataSource.apply(snapshot, animatingDifferences: true)
     }
 }

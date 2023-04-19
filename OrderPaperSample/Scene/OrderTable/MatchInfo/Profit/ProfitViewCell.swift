@@ -20,7 +20,7 @@ final class ProfitViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let cashProfilView = TitleAndValueView(titleValue: "Profit", contentValue: "-", topOffset: 4.0, leadingOffset: 4.0, bottomOffset: 0.0)
+    private let cashProfitView = TitleAndValueView(titleValue: "Profit", contentValue: "-", topOffset: 4.0, leadingOffset: 4.0, bottomOffset: 0.0)
     private let cashBuyPriceView = TitleAndValueView(titleValue: "BuyPrice", contentValue: "-", topOffset: 4.0, leadingOffset: 4.0)
     
     private let cashSeparatoView = SeparatorView(size: 0.5, bgColor: .lightGray.withAlphaComponent(0.5), direction: .horizontal)
@@ -34,7 +34,7 @@ final class ProfitViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let creditProfilView = TitleAndValueView(titleValue: "Profit", contentValue: "-", topOffset: 4.0, leadingOffset: 4.0, bottomOffset: 0.0)
+    private let creditProfitView = TitleAndValueView(titleValue: "Profit", contentValue: "-", topOffset: 4.0, leadingOffset: 4.0, bottomOffset: 0.0)
     private let creditBuyPriceView = TitleAndValueView(titleValue: "BuyPrice", contentValue: "-", topOffset: 4.0, leadingOffset: 4.0)
     
     private let creditSeparatoView = SeparatorView(size: 0.5, bgColor: .lightGray.withAlphaComponent(0.5), direction: .horizontal)
@@ -48,7 +48,7 @@ final class ProfitViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let guaranteeProfilView = TitleAndValueView(titleValue: "Profit", contentValue: "-", topOffset: 4.0, leadingOffset: 4.0, bottomOffset: 0.0)
+    private let guaranteeProfitView = TitleAndValueView(titleValue: "Profit", contentValue: "-", topOffset: 4.0, leadingOffset: 4.0, bottomOffset: 0.0)
     private let guaranteeBuyPriceView = TitleAndValueView(titleValue: "BuyPrice", contentValue: "-", topOffset: 4.0, leadingOffset: 4.0)
     
     
@@ -57,17 +57,17 @@ final class ProfitViewCell: UICollectionViewCell {
         view.backgroundColor = .systemBackground
         [
             cashTitleLabel,
-            cashProfilView,
+            cashProfitView,
             cashBuyPriceView,
             cashSeparatoView,
             
             creditTitleLabel,
-            creditProfilView,
+            creditProfitView,
             creditBuyPriceView,
             creditSeparatoView,
             
             guaranteeTitleLabel,
-            guaranteeProfilView,
+            guaranteeProfitView,
             guaranteeBuyPriceView
         
         ]
@@ -82,14 +82,14 @@ final class ProfitViewCell: UICollectionViewCell {
             $0.trailing.equalToSuperview().offset(-offset)
         }
         
-        cashProfilView.snp.makeConstraints {
+        cashProfitView.snp.makeConstraints {
             $0.top.equalTo(cashTitleLabel.snp.bottom)
             $0.leading.equalToSuperview().offset(offset)
             $0.trailing.equalToSuperview().offset(-offset)
         }
         
         cashBuyPriceView.snp.makeConstraints {
-            $0.top.equalTo(cashProfilView.snp.bottom)
+            $0.top.equalTo(cashProfitView.snp.bottom)
             $0.leading.equalToSuperview().offset(offset)
             $0.trailing.equalToSuperview().offset(-offset)
         }
@@ -106,14 +106,14 @@ final class ProfitViewCell: UICollectionViewCell {
             $0.trailing.equalToSuperview().offset(-offset)
         }
         
-        creditProfilView.snp.makeConstraints {
+        creditProfitView.snp.makeConstraints {
             $0.top.equalTo(creditTitleLabel.snp.bottom)
             $0.leading.equalToSuperview().offset(offset)
             $0.trailing.equalToSuperview().offset(-offset)
         }
         
         creditBuyPriceView.snp.makeConstraints {
-            $0.top.equalTo(creditProfilView.snp.bottom)
+            $0.top.equalTo(creditProfitView.snp.bottom)
             $0.leading.equalToSuperview().offset(offset)
             $0.trailing.equalToSuperview().offset(-offset)
         }
@@ -130,14 +130,14 @@ final class ProfitViewCell: UICollectionViewCell {
             $0.trailing.equalToSuperview().offset(-offset)
         }
         
-        guaranteeProfilView.snp.makeConstraints {
+        guaranteeProfitView.snp.makeConstraints {
             $0.top.equalTo(guaranteeTitleLabel.snp.bottom)
             $0.leading.equalToSuperview().offset(offset)
             $0.trailing.equalToSuperview().offset(-offset)
         }
         
         guaranteeBuyPriceView.snp.makeConstraints {
-            $0.top.equalTo(guaranteeProfilView.snp.bottom)
+            $0.top.equalTo(guaranteeProfitView.snp.bottom)
             $0.leading.equalToSuperview().offset(offset)
             $0.trailing.equalToSuperview().offset(-offset)
         }
@@ -152,6 +152,17 @@ final class ProfitViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupCell(profitData: ProfitData) {
+        cashProfitView.setData(value: profitData.cashProfit.twoPointStringNumber)
+        cashBuyPriceView.setData(value: profitData.cashProfit.fourPointStringNumber)
+        
+        creditProfitView.setData(value: profitData.creditProfit.twoPointStringNumber)
+        creditBuyPriceView.setData(value: profitData.creditPrice.fourPointStringNumber)
+        
+        guaranteeProfitView.setData(value: profitData.guaranteeProfit.twoPointStringNumber)
+        guaranteeBuyPriceView.setData(value: profitData.guaranteePrice.fourPointStringNumber)
     }
 }
 

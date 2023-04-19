@@ -66,6 +66,11 @@ final class MatchCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setupCell(matchData: MatchData) {
+        priceLabel.text = matchData.priceValue.fourPointStringNumber
+        volumnLabel.text = "\(matchData.volumQuanti)"
+    }
 }
 
 private extension MatchCell {

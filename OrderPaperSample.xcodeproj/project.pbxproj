@@ -107,13 +107,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		493808AB29EF5A930082CDDC /* Profit */ = {
+			isa = PBXGroup;
+			children = (
+				4954A2F129E51BD000E815C9 /* ProfitViewCell.swift */,
+				4954A2F329E537BC00E815C9 /* ProfitData.swift */,
+			);
+			path = Profit;
+			sourceTree = "<group>";
+		};
 		4954A2EF29E51B8A00E815C9 /* MatchInfo */ = {
 			isa = PBXGroup;
 			children = (
 				49E5257529D6C2B1004D649C /* MatchStrengthView.swift */,
 				4954A2F029E51BA600E815C9 /* Match */,
-				4954A2F129E51BD000E815C9 /* ProfitViewCell.swift */,
-				4954A2F329E537BC00E815C9 /* ProfitData.swift */,
+				493808AB29EF5A930082CDDC /* Profit */,
 			);
 			path = MatchInfo;
 			sourceTree = "<group>";

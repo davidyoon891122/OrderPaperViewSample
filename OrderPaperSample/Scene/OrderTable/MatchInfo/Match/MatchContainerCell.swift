@@ -34,6 +34,8 @@ final class MatchContainerCell: UICollectionViewCell {
     
     private var datasource: UICollectionViewDiffableDataSource<Int, MatchData>!
     
+    private var matchData: [MatchData]?
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupView()
@@ -42,6 +44,11 @@ final class MatchContainerCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setInfoData(matchInfoData: MatchInfoData) {
+        matchData = matchInfoData.matchData
+        applySnapshot()
     }
 }
 
@@ -88,6 +95,8 @@ private extension MatchContainerCell {
     func configureDataSource() {
         datasource = UICollectionViewDiffableDataSource<Int, MatchData>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MatchCell.identifier, for: indexPath) as? MatchCell else { return UICollectionViewCell() }
+            
+            cell.setupCell(matchData: item)
             return cell
         })
         
@@ -96,9 +105,10 @@ private extension MatchContainerCell {
     }
     
     func applySnapshot() {
+        guard let matchData = self.matchData else { return }
         var snapshot = NSDiffableDataSourceSnapshot<Int, MatchData>()
         snapshot.appendSections([0])
-        snapshot.appendItems(MatchData.matchItem)
+        snapshot.appendItems(matchData)
         datasource.apply(snapshot, animatingDifferences: true)
     }
 }
