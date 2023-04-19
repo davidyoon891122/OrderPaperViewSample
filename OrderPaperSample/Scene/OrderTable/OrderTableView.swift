@@ -93,7 +93,7 @@ final class OrderTableView: UIView {
         rightInfoView.setInfoData(stockInfo: stockInfo)
         matchStrengthView.setDataInfo(stockInfo: stockInfo)
         bidPriceView.setDataInfo(stockInfo: stockInfo)
-        
+        askVolumnView.setInfoData(stockInfo: stockInfo)
     }
 }
 

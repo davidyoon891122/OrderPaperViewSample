@@ -29,6 +29,8 @@ final class AskVolumeView: UIView {
     
     private var dataSource: UICollectionViewDiffableDataSource<Int, VolumeData>!
     
+    private var volumeData: [VolumeData]?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -37,6 +39,12 @@ final class AskVolumeView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setInfoData(stockInfo: StockInfoData) {
+        self.volumeData = stockInfo.askVolume
+        
+        applySnapshot()
     }
 }
 
@@ -65,6 +73,8 @@ private extension AskVolumeView {
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AskVolumeCell.identifier, for: indexPath) as? AskVolumeCell else { return UICollectionViewCell() }
             
+            cell.setupCell(volumeData: item)
+            
             return cell
         })
         
@@ -72,9 +82,10 @@ private extension AskVolumeView {
     }
     
     func applySnapshot() {
+        guard let volumeData = self.volumeData else { return }
         var snapshot = NSDiffableDataSourceSnapshot<Int, VolumeData>()
         snapshot.appendSections([0])
-        snapshot.appendItems(VolumeData.allItem)
+        snapshot.appendItems(volumeData)
         dataSource.apply(snapshot, animatingDifferences: true)
     }
 }

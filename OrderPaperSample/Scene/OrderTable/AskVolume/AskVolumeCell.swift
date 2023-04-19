@@ -51,6 +51,10 @@ final class AskVolumeCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setupCell(volumeData: VolumeData) {
+        volumeLabel.text = "\(volumeData.volume)"
+    }
 }
 
 private extension AskVolumeCell {
