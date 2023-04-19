@@ -22,6 +22,8 @@ final class AskPriceView: UIView {
             forCellWithReuseIdentifier: AskPriceCell.identifier
         )
         
+        collectionView.delegate = self
+        
         collectionView.isScrollEnabled = false
         
         return collectionView
@@ -44,6 +46,12 @@ final class AskPriceView: UIView {
     func setInfoData(stockInfo: StockInfoData) {
         self.priceData = stockInfo.askPrice
         applySnapshot()
+    }
+}
+
+extension AskPriceView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
     }
 }
 

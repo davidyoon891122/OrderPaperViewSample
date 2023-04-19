@@ -22,6 +22,7 @@ final class BidPriceView: UIView {
             forCellWithReuseIdentifier: AskPriceCell.identifier
         )
         
+        collectionView.delegate = self
         collectionView.isScrollEnabled = false
         
         return collectionView
@@ -44,6 +45,12 @@ final class BidPriceView: UIView {
     func setDataInfo(stockInfo: StockInfoData) {
         priceData = stockInfo.bidPrice
         applySnapshot()
+    }
+}
+
+extension BidPriceView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
 }
 
