@@ -56,8 +56,11 @@ final class RightInfoView: UIView {
     private var firstInfoData: FirstInfoData?
     private var secondInfoData: SecondInfoData?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private var viewModel: MainViewModelType
+    
+    init(viewModel: MainViewModelType) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         setupViews()
         configureDataSource()
     }
@@ -157,7 +160,7 @@ import SwiftUI
 struct RightInfoViewPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
-            RightInfoView()
+            RightInfoView(viewModel: MainViewModel())
         }
         .frame(width: Constants.OrderPaper.volumeViewWidth, height: 300.0)
     }

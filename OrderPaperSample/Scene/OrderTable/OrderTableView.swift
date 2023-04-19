@@ -9,11 +9,11 @@ import UIKit
 import SnapKit
 
 final class OrderTableView: UIView {
-    private lazy var bidVolumeView = BidVolumeView()
+    private lazy var bidVolumeView = BidVolumeView(viewModel: viewModel)
     
-    private lazy var askPriceView = AskPriceView()
+    private lazy var askPriceView = AskPriceView(viewModel: viewModel)
     
-    private lazy var rightInfoView = RightInfoView()
+    private lazy var rightInfoView = RightInfoView(viewModel: viewModel)
     
     private lazy var topHStackView: UIStackView = {
         let stackView = UIStackView()
@@ -43,11 +43,11 @@ final class OrderTableView: UIView {
         return stackView
     }()
     
-    private lazy var matchStrengthView = MatchStrengthView()
+    private lazy var matchStrengthView = MatchStrengthView(viewModel: viewModel)
     
-    private lazy var bidPriceView = BidPriceView()
+    private lazy var bidPriceView = BidPriceView(viewModel: viewModel)
     
-    private lazy var askVolumnView = AskVolumeView()
+    private lazy var askVolumnView = AskVolumeView(viewModel: viewModel)
     
     private lazy var bottomHStackView: UIStackView = {
         let stackView = UIStackView()
@@ -78,8 +78,11 @@ final class OrderTableView: UIView {
         return stackView
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private var viewModel: MainViewModelType
+    
+    init(viewModel: MainViewModelType) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         setupViews()
     }
     
@@ -132,7 +135,7 @@ import SwiftUI
 struct OrderTableViewPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
-            OrderTableView()
+            OrderTableView(viewModel: MainViewModel())
         }
         .frame(width: UIScreen.main.bounds.width, height: Constants.OrderPaper.orderPaperHeight * 2)
     }

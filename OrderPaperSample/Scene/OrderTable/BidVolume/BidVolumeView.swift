@@ -31,8 +31,11 @@ final class BidVolumeView: UIView {
     
     private var volumeData: [VolumeData]?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private var viewModel: MainViewModelType
+    
+    init(viewModel: MainViewModelType) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         setupViews()
         configurationDataSource()
     }
@@ -94,7 +97,7 @@ import SwiftUI
 struct BidVolumeViewPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
-            BidVolumeView()
+            BidVolumeView(viewModel: MainViewModel())
         }
         .frame(width: Constants.OrderPaper.volumeViewWidth, height: Constants.OrderPaper.orderPaperHeight)
     }

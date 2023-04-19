@@ -10,6 +10,7 @@ import RxSwift
 
 protocol MainViewModelInput {
     func requestStockInfo(code: String)
+    func requestOrderPopup(priceData: PriceData)
 }
 
 protocol MainViewModelOutput {
@@ -30,5 +31,9 @@ class MainViewModel: MainViewModelType, MainViewModelInput, MainViewModelOutput 
     func requestStockInfo(code: String) {
         let stockInfo = StockInfoData.item
         stockInfoPublishSubject.onNext(stockInfo)
+    }
+    
+    func requestOrderPopup(priceData: PriceData) {
+        
     }
 }

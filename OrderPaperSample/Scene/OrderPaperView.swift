@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 
 final class OrderPaperView: UIView {
-    private let topInfoView = TopInfoView()
+    private lazy var topInfoView = TopInfoView(viewModel: viewModel)
     
-    private let orderTableView = OrderTableView()
+    private lazy var orderTableView = OrderTableView(viewModel: viewModel)
     
     private lazy var containerView: UIView = {
         let view = UIView()
@@ -41,8 +41,11 @@ final class OrderPaperView: UIView {
         return view
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private var viewModel: MainViewModelType
+    
+    init(viewModel: MainViewModelType) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         setupViews()
     }
     
@@ -80,7 +83,7 @@ import SwiftUI
 struct OrderPaperViewPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
-            OrderPaperView()
+            OrderPaperView(viewModel: MainViewModel())
         }
     }
 }

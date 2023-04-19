@@ -55,8 +55,11 @@ final class MatchStrengthView: UIView {
     private var matchInfoData: MatchInfoData?
     private var profitInfoData: ProfitData?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private var viewModel: MainViewModelType
+    
+    init(viewModel: MainViewModelType) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         setupViews()
         configureDataSource()
     }
@@ -159,7 +162,7 @@ import SwiftUI
 struct MatchStrengthViewPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
-            MatchStrengthView()
+            MatchStrengthView(viewModel: MainViewModel())
         }
         .frame(width: Constants.OrderPaper.volumeViewWidth, height: 300.0)
     }

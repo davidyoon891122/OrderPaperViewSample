@@ -16,7 +16,7 @@ final class MainViewController: UIViewController {
     
     private let hogaView = UIView()
     
-    private let orderPaperView = OrderPaperView()
+    private lazy var orderPaperView = OrderPaperView(viewModel: viewModel)
     
     private lazy var scrollTestView: UIView = {
         let view = UIView()

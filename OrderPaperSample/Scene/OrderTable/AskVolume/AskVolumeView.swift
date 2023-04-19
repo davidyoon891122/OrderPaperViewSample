@@ -31,8 +31,11 @@ final class AskVolumeView: UIView {
     
     private var volumeData: [VolumeData]?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private var viewModel: MainViewModelType
+    
+    init(viewModel: MainViewModelType) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         setupViews()
         configurationDataSource()
     }
@@ -97,7 +100,7 @@ import SwiftUI
 struct AskVolumeViewPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
-            AskVolumeView()
+            AskVolumeView(viewModel: MainViewModel())
         }
         .frame(width: Constants.OrderPaper.volumeViewWidth, height: Constants.OrderPaper.orderPaperHeight)
     }

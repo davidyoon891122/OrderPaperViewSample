@@ -32,8 +32,11 @@ final class BidPriceView: UIView {
     
     private var priceData: [PriceData]?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private var viewModel: MainViewModelType
+    
+    init(viewModel: MainViewModelType) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         setupViews()
         configureDataSource()
     }
@@ -103,7 +106,7 @@ import SwiftUI
 struct BidPriceViewPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
-            BidPriceView()
+            BidPriceView(viewModel: MainViewModel())
         }
         .frame(width: Constants.OrderPaper.priceViewWidth, height: Constants.OrderPaper.orderPaperHeight)
     }

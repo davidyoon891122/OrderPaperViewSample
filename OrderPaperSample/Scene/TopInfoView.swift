@@ -123,8 +123,11 @@ final class TopInfoView: UIView {
         return view
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private var viewModel: MainViewModelType
+    
+    init(viewModel: MainViewModelType) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         setupViews()
     }
     
@@ -165,7 +168,7 @@ import SwiftUI
 struct TopInfoViewPreview: PreviewProvider {
     static var previews: some View {
         UIView.UIViewPreview {
-            TopInfoView()
+            TopInfoView(viewModel: MainViewModel())
         }
         .frame(width: UIScreen.main.bounds.width - 32, height: 100.0)
     }
